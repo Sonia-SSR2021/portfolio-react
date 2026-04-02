@@ -31,13 +31,13 @@ export default function Profile() {
               <h1>
                 <TypeAnimation
                   sequence={[
-                    'Desarrolladora Java Backend 🤖',
+                    'Desarrolladora Java Backend 💻',
                     1000,
                     'Desarrolladora Spring Boot ⚡️',
                     1000,
                     'Desarrollo APIs REST 🌐',
                     1000,
-                    'Desarrollo de Microservicios 🧑‍💻',
+                    'Desarrollo de Microservicios ⚙️',
                     1000,
                     'Identidad Digital Blockchain 🚀',
                     1000,
