@@ -1,25 +1,30 @@
 import React from 'react';
 import { TypeAnimation } from 'react-type-animation';
+import './Profile.css';
 
 export default function Profile() {
   return (
-    <div className='profile.container'>
+    <div className='profile-container'>
       <div className='profile-parent'>
         <div className='profile-details'>
           <div className='colz'>
+            <div className='colz-icon'>
             <a href='https://www.linkedin.com/in/sonia-soriano-rodr%C3%ADguez/'>
               <i className='fa fa-linkedin'></i>
             </a>
             <a href='https://github.com/Sonia-SSR2021'>
               <i className='fa fa-github'></i>
             </a>
+            </div>
           </div>
+
           <div className='profile-details-name'>
             <span className='primary-text'>
               {" "}
               Hola, soy <span className='highlighted-text'>Sonia</span>
             </span>
           </div>
+
           <div className='profile-details-role'>
             <span className='primary-text'>
               {" "}
@@ -48,6 +53,7 @@ export default function Profile() {
               </span>
             </span>
           </div>
+
           <div className='profile-options'>
             <button className='btn primary-btn'>
               {""}
@@ -57,6 +63,12 @@ export default function Profile() {
               <button className='btn highlighted-btn'>Descargar CV</button>
             </a>
             </div>
+          </div>
+
+        <div className='profile-picture'>
+          <div className='profile-picture-background'>
+
+          </div>
         </div>
       </div>
     </div>
