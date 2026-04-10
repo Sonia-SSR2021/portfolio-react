@@ -34,6 +34,7 @@ export default function Header() {
         if (!currentScreen || !currentScreen.screenInView) return;
         let screenIndex = GET_SCREEN_INDEX(currentScreen.screenInView);
         if (screenIndex < 0) return;
+        setSelectedScreen(screenIndex);
     }
 
     /**
@@ -72,7 +73,7 @@ export default function Header() {
             classes += "header-option-separator";
 
         if (selectedScreen === index)
-            classes += "selected-header-option";
+            classes += " selected-header-option";
 
         return classes;
     }
@@ -87,7 +88,7 @@ export default function Header() {
         let screenComponent = document.getElementById(screen.screen_name);
         if (!screenComponent) return;
         screenComponent.scrollIntoView({ behavior: "smooth" });
-        selectedScreen(index);
+        setSelectedScreen(index);
         setShowHeaderOptions(false);
     }
 
