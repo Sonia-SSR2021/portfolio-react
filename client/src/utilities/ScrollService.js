@@ -94,7 +94,7 @@ export default class ScrollService {
                     screen['alreadyRendered'] = true;
                     break;
                 }
-                if(fullyVisible) {
+                if(partiallyVisible) {
                     ScrollService.currentScreenBroadcaster.next({
                         screenInView: screen.screen_name
                     });
