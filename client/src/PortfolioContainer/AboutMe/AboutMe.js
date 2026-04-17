@@ -8,7 +8,7 @@ export default function AboutMe(props) {
     let fadeInScreenHandler = (screen) => {
         if (screen.fadeInScreen !== props.id) return;
         Animations.animations.fadeInScreen(props.id);
-    }
+    };
     const fadeInSubscription = ScrollService.currentScreenFadeIn.subscribe(fadeInScreenHandler);
 
     const SCREEN_CONSTANTS = {
