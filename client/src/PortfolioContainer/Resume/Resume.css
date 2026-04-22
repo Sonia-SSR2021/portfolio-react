@@ -1,0 +1,345 @@
+/* TODO: doc */
+
+.resume-container {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    min-height: fit-content;
+    margin: 120px 0;
+}
+.resume-card {
+    display: flex;
+    height: 360px;
+    width: 1000px;
+}
+.resume-bullets {
+    height: 100%;
+    width: 320px;
+}
+.resume-bullet-details {
+    flex-grow: 1;
+    width: 600px;
+    overflow: hidden;
+    padding: 0 0 0 70px;
+    box-shadow: -15px 0 9px -15px #1f2235;
+}
+.experience-description {
+    margin: 10px 0 20px 0;
+    text-align: justify;
+    max-width: 100%;
+}
+.resume-details-carousal {
+    transition: transform 1s ease-out;
+    height: 100%;
+}
+.bullet-container {
+    display: flex;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    position: relative;
+}
+.bullets {
+    width: 80%;
+    position: relative;
+    z-index: 2;
+}
+.bullet {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    background-color: transparent;   /* <-- SIN FONDO POR DEFECTO */
+    height: 40px;
+    margin: 15px 0;
+    padding: 0 8px;
+    border-radius: 20px;
+    width: auto;                     /* <-- que se adapte al texto */
+    /* overflow: visible; */
+    /* transition: all 0.3s ease; */
+    cursor: pointer;
+    position: relative;
+}
+.selected-bullet {
+    padding: 0 16px;
+    width: 220px;                    /* <-- un poco más ancho */
+}
+.bullet::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    background-color: #1f2235;
+    border-radius: 20px;
+
+    /* Animación */
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.35s ease;
+
+    z-index: 0;
+}
+.selected-bullet::before {
+    transform: scaleX(1);
+}
+.bullet span {
+    opacity: 1;
+    transform: none;
+}
+.bullet-label {
+    font-size: 14px;
+    white-space: nowrap;
+    font-family: "Poppins SemiBold";
+    color: #111;                     /* <-- NO SELECCIONADO = NEGRO */
+    transition: color 0.3s ease;
+}
+.bullet-logo {
+    height: 16px;
+    width: 16px;
+    flex-shrink: 0;
+}
+.bullet-logo,.bullet-label {
+    position: relative;
+    z-index: 1;
+}
+.bullet-icons {
+    width: 34px;
+    height: 100%;
+    z-index: 1;
+    background-color: #1f2235;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.selected-bullet .bullet-label {
+    color: #fff;
+}
+.resume-screen-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    height: 100%;
+    width: 100%;
+    padding: 20px 10px 20px 0;
+    box-sizing: border-box;
+    overflow-y: auto;
+    position: relative;
+}
+.resume-screen-container::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 40px;
+
+    background: linear-gradient(
+        to bottom,
+        rgba(255, 255, 255, 0) 0%,
+        rgba(255, 255, 255, 0.8) 60%,
+        rgba(255, 255, 255, 1) 100%
+    );
+
+    pointer-events: none;
+
+    opacity: 0;
+    transition: opacity 0.25s ease;
+}
+.resume-screen-container.show-fade::after {
+    opacity: 1;
+}
+.resume-screen-container::-webkit-scrollbar {
+    width: 8px;
+}
+.resume-screen-container::-webkit-scrollbar-track {
+    background: rgba(31, 34, 53, 0.08);
+    border-radius: 8px;
+}
+.resume-screen-container::-webkit-scrollbar-thumb {
+    background: #1f2235;
+    border-radius: 8px;
+}
+.resume-screen-container {
+    scrollbar-color: #1f2235 rgba(31, 34, 53, 0.08);
+    scrollbar-width: thin;
+    position: relative;
+}
+.resume-heading {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+.resume-main-heading {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+.heading-bullet {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    width: 100%;
+    gap: 10px;
+}
+.heading-bullet::before {
+    content: "";
+    display: inline-block;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background-color: var(--dark-orange);
+    flex-shrink: 0;
+}
+.heading-bullet span {
+    font-size: 16px;
+    font-family: "Poppins SemiBold";
+    color: #111;
+    white-space: nowrap;
+    margin-right: auto;
+}
+.resume-sub-heading {
+    font-size: 14px;
+    font-family: "Poppins SemiBold";
+    color: #111;
+    margin: 0;
+}
+.heading-date {
+    background-color: var(--dark-orange);
+    padding: 4px 12px;
+    font-size: 14px;
+    border-radius: 14px;
+    color: white;
+    white-space: nowrap;
+    margin-left: auto;
+}
+.resume-heading-description {
+    font-size: 12px;
+    text-align: justify;
+}
+.heading-date {
+    background-color: var(--dark-orange);
+    padding: 4px 12px;
+    font-size: 14px;
+    border-radius: 14px;
+    color: white;
+    white-space: nowrap;
+}
+.skill-parent {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    width: calc(50% - 12px);
+    margin-bottom: 18px;
+}
+.programming-skills-container {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(220px, 1fr));
+    gap: 18px;
+}
+.programming-skills-container .heading-bullet::before {
+    display: none;
+}
+.programming-skills-container .heading-bullet {
+    display: flex;
+    flex-direction:column;
+    align-items: flex-start;
+    gap: 10px;
+}
+.programming-skills-container .heading-bullet span {
+    font-family: "Poppins SemiBold";
+    font-size: 16px;
+    color: #1f2235;
+    white-space: normal;
+    margin-right: 0;
+}
+.skill-percentage {
+    position: relative;
+    height: 15px;
+    width: 100%;
+    max-width: 260px;
+    min-width: 180px;
+    background-color: rgba(31, 34, 53, 0.12);
+    border-radius: 10px;
+    overflow: hidden;
+}
+.skill-percentage .active-percentage-bar {
+    height: 100%;
+    transition: width 0.8s ease;
+    position: absolute;
+    background-color: #1f2235;
+    border-radius: 10px;
+}
+.skill-parent span {
+    font-family: "Poppins SemiBold";
+    font-size: 16px;
+    color: #1f2235;
+}
+
+@media only screen and (max-width: 1110px) {
+    .resume-card {
+        width: 90%;
+    }
+    .resume-bullet-details {
+        padding-left: 40px;
+    }
+}
+@media only screen and (max-width: 1023px) {
+    .resume-card {
+        flex-direction: column;
+        width: 100%;
+        height: auto;
+        align-items: center;
+    }
+
+    .resume-bullets {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    .resume-bullet-details {
+        width: 100%;
+        padding-left: 0;
+        height: 500px; /* más alto para tablets */
+    }
+
+    .selected-bullet {
+        width: 100%;
+    }
+}
+@media only screen and (max-width: 768px) {
+    .resume-bullets {
+        width: 100%;
+    }
+
+    .bullet {
+        width: 100%;
+        justify-content: flex-start;
+    }
+
+    .resume-bullet-details {
+        height: 600px; /* más espacio para scroll */
+    }
+
+    .programming-skills-container {
+        grid-template-columns: 1fr; /* una sola columna */
+    }
+}
+@media only screen and (max-width: 480px) {
+    .bullet-label {
+        font-size: 13px;
+    }
+
+    .resume-heading {
+        padding: 0 10px;
+    }
+
+    .skill-percentage {
+        min-width: 140px;
+    }
+}
