@@ -9,6 +9,15 @@ import "./Specialization.css";
 import ScreenHeading from "../../utilities/ScreenHeading/ScreenHeading";
 import ScrollService from "../../utilities/ScrollService";
 import Animations from "../../utilities/Animations";
+import javaIcon from "../../assets/Specialization/java.png";
+import databaseIcon from "../../assets/Specialization/sql.png";
+import apiIcon from "../../assets/Specialization/api.png";
+import microservicesIcon from "../../assets/Specialization/microservices.png";
+import testingIcon from "../../assets/Specialization/testing.png";
+import cicdIcon from "../../assets/Specialization/ci-cd.png";
+import agileIcon from "../../assets/Specialization/agile.png";
+import aiIcon from "../../assets/Specialization/ia.png";
+import footerShape from "../../assets/Specialization/shape-bg.png";
 
 export default function Specialization(props) {
   let fadeInScreenHandler = (screen) => {
@@ -28,7 +37,7 @@ export default function Specialization(props) {
       ],
       level: "Avanzado",
       percentage: 80,
-      icon: "🖥️",
+      icon: javaIcon,
     },
     {
       title: "Sistemas de Bases de Datos",
@@ -39,7 +48,7 @@ export default function Specialization(props) {
       ],
       level: "Intermedio",
       percentage: 60,
-      icon: "🗄️",
+      icon: databaseIcon,
     },
     {
       title: "APIs REST & Diseño de Sistemas",
@@ -51,7 +60,7 @@ export default function Specialization(props) {
       ],
       level: "Intermedio‑Avanzado",
       percentage: 75,
-      icon: "🗄️",
+      icon: apiIcon,
     },
     {
       title: "Arquitectura de Microservicios",
@@ -63,7 +72,7 @@ export default function Specialization(props) {
       ],
       level: "Intermedio",
       percentage: 70,
-      icon: "🗄️",
+      icon: microservicesIcon,
     },
     {
       title: "Testing & Calidad de Software",
@@ -75,7 +84,7 @@ export default function Specialization(props) {
       ],
       level: "Intermedio‑Avanzado",
       percentage: 75,
-      icon: "🗄️",
+      icon: testingIcon,
     },
     {
       title: "CI/CD & Entornos de Desarrollo",
@@ -87,33 +96,31 @@ export default function Specialization(props) {
       ],
       level: "Básico‑Intermedio",
       percentage: 50,
-      icon: "🗄️",
+      icon: cicdIcon,
     },
     {
       title: "Metodologías Ágiles & Herramientas",
       points: [
         "Trabajo en entornos Agile/Scrum.",
-        "Gestión de tareas (Jira) y documentación técnica (Confluence).",
         "Gestión de versiones con Git, GitLab y Github.",
-        "Flujos de trabajo colaborativos (branching, merge requests)",
+        "Flujos de trabajo colaborativos.",
         "Revisiones de código y mejora continua.",
       ],
       level: "Avanzado",
       percentage: 85,
-      icon: " ⚡",
+      icon: agileIcon,
     },
     {
       title: "Exploración de IA & LLMs",
       points: [
         "Consumo de APIs de LLMs (Claude / OpenAI).",
         "Integración de IA en aplicaciones backend.",
-        "Experimentación con prompting básico.",
-        "Casos de uso: automatización y asistentes.",
+        "Experimentación con prompting.",
         "Aprendizaje continuo en tecnologías emergentes.",
       ],
       level: "Básico",
       percentage: 30,
-      icon: " ⚡",
+      icon: aiIcon,
     },
   ];
 
@@ -151,7 +158,17 @@ export default function Specialization(props) {
             <Slider {...settings}>
               {specializationData.map((item, index) => (
                 <div key={index} className="specialization-item">
-                  <div className="specialization-icon">{item.icon}</div>
+                  <div className="specialization-icon">
+                    {typeof item.icon === "string" &&
+                    item.icon.startsWith("http") ? (
+                      <img src={item.icon} alt={item.title} />
+                    ) : typeof item.icon === "string" &&
+                      item.icon.endsWith(".png") ? (
+                      <img src={item.icon} alt={item.title} />
+                    ) : (
+                      item.icon
+                    )}
+                  </div>
 
                   <h3 className="specialization-title">{item.title}</h3>
 
@@ -176,6 +193,10 @@ export default function Specialization(props) {
           </div>
         </div>
       </section>
+
+      <div className="footer-image">
+        <img src={footerShape} alt="footer decoration" />
+      </div>
     </div>
   );
 }

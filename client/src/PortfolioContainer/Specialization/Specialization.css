@@ -7,12 +7,66 @@
 }
 
 .specialization-section {
-  padding: 80px 0;
-  min-height: 500px;
+  padding: 80px 0 80px;
+  /* min-height: 500px; */
+  background-image: url("../../assets/Specialization/bg-1.jpg");
+  background-position: center;
+  background-attachment: fixed;
+  position: relative;
+  z-index: 0;
 }
 
-.specialization-item {
-  padding: 20px;
+.specialization-section::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  opacity: 0.85;
+  background-color: #1f2235;
+}
+
+.specialization-section .container {
+  position: relative;
+  z-index: 2;
+}
+
+.footer-image {
+  width: 100%;
+  height: 100%;
+  max-width: 1920px;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  margin-top: -110px;
+  position: relative;
+  z-index: 3;
+  pointer-events: none;
+}
+
+.footer-image img {
+  max-width: 100%;
+  height: 130px;
+}
+
+.specialization-section .specialization-item {
+  /* padding: 30px;
+  background-color: white;
+  border-radius: 50px 50px 50px 50px; */
+  padding: 30px;
+  background-color: white;
+  border-radius: 30px;
+  
+  height: 420px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.specialization-item:hover {
+  transform: translateY(-8px);
 }
 
 .slick-slide {
@@ -20,9 +74,15 @@
   justify-content: center;
 }
 
+.slick-slide > div {
+  padding: 0 15px;
+}
+
 .specialization-progress {
-  margin-top: 10px;
-  text-align: center;
+  /* margin-top: auto;
+  text-align: center; */
+  margin-top: auto;
+  padding-top: 10px;
 }
 
 .progress-bar {
@@ -46,4 +106,37 @@
   font-weight: 600;
   color: #333;
   font-size: 0.9rem;
+}
+
+.specialization-icon img {
+  /* width: 50px;
+  height: 50px;
+  object-fit: contain; */
+  width: 80px;
+  height: 80px;
+  object-fit: contain;
+}
+
+.specialization-icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.specialization-title {
+  text-align: center;
+  font-size: 1.4rem;
+  font-weight: 700;
+  margin-bottom: 15px;
+  color: #1f2235;
+  letter-spacing: 0.5px;
+}
+
+.specialization-points {
+  /* flex-grow: 1;
+  padding-left: 20px; */
+  padding-left: 20px;
+  font-size: 0.95rem;
+  line-height: 1.5;
 }
