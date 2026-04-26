@@ -1,6 +1,6 @@
 //TODO: añadir las imagenes para las cards
 
-import React from "react";
+import React, { useEffect } from "react";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
@@ -24,8 +24,11 @@ export default function Specialization(props) {
     if (screen.fadeInScreen !== props.id) return;
     Animations.animations.fadeInScreen(props.id);
   };
-  const fadeInSubscription =
-    ScrollService.currentScreenFadeIn.subscribe(fadeInScreenHandler);
+  useEffect(() => {
+    const sub =
+      ScrollService.currentScreenFadeIn.subscribe(fadeInScreenHandler);
+    return () => sub.unsubscribe();
+  }, []);
 
   const specializationData = [
     {
@@ -152,7 +155,7 @@ export default function Specialization(props) {
         subHeading={"Mis principales fortalezas y áreas de expertise"}
       />
 
-      <section className="specialization-section" id={props.id || ""}>
+      <section className="specialization-section fade-in" id={props.id || ""}>
         <div className="container">
           <div className="row">
             <Slider {...settings}>
