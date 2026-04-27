@@ -22,7 +22,7 @@
     width: 600px;
     overflow: hidden;
     padding: 0 0 0 70px;
-    box-shadow: -15px 0 9px -15px #1f2235;
+    box-shadow: -15px 0 9px -15px #264653;
 }
 .experience-description {
     margin: 10px 0 20px 0;
@@ -49,20 +49,18 @@
     display: flex;
     align-items: center;
     gap: 12px;
-    background-color: transparent;   /* <-- SIN FONDO POR DEFECTO */
+    background-color: transparent;
     height: 40px;
     margin: 15px 0;
     padding: 0 8px;
     border-radius: 20px;
-    width: auto;                     /* <-- que se adapte al texto */
-    /* overflow: visible; */
-    /* transition: all 0.3s ease; */
+    width: auto;
     cursor: pointer;
     position: relative;
 }
 .selected-bullet {
     padding: 0 16px;
-    width: 220px;                    /* <-- un poco más ancho */
+    width: 220px;
 }
 .bullet::before {
     content: "";
@@ -71,7 +69,7 @@
     top: 0;
     height: 100%;
     width: 100%;
-    background-color: #1f2235;
+    background-color: #264653;
     border-radius: 20px;
 
     /* Animación */
@@ -92,7 +90,7 @@
     font-size: 14px;
     white-space: nowrap;
     font-family: "Poppins SemiBold";
-    color: #111;                     /* <-- NO SELECCIONADO = NEGRO */
+    color: #111;
     transition: color 0.3s ease;
 }
 .bullet-logo {
@@ -108,7 +106,7 @@
     width: 34px;
     height: 100%;
     z-index: 1;
-    background-color: #1f2235;
+    background-color: #264653;
     position: absolute;
     display: flex;
     flex-direction: column;
@@ -160,11 +158,11 @@
     border-radius: 8px;
 }
 .resume-screen-container::-webkit-scrollbar-thumb {
-    background: #1f2235;
+    background: #264653;
     border-radius: 8px;
 }
 .resume-screen-container {
-    scrollbar-color: #1f2235 rgba(31, 34, 53, 0.08);
+    scrollbar-color: #264653 rgba(31, 34, 53, 0.08);
     scrollbar-width: thin;
     position: relative;
 }
@@ -193,7 +191,7 @@
     width: 15px;
     height: 15px;
     border-radius: 50%;
-    background-color: var(--dark-orange);
+    background-color: rgb(60, 204, 185);
     flex-shrink: 0;
 }
 .heading-bullet span {
@@ -210,7 +208,7 @@
     margin: 0;
 }
 .heading-date {
-    background-color: var(--dark-orange);
+    background-color: rgb(60, 204, 185);
     padding: 4px 12px;
     font-size: 14px;
     border-radius: 14px;
@@ -223,7 +221,7 @@
     text-align: justify;
 }
 .heading-date {
-    background-color: var(--dark-orange);
+    background-color: rgb(56, 177, 161);
     padding: 4px 12px;
     font-size: 14px;
     border-radius: 14px;
@@ -254,7 +252,7 @@
 .programming-skills-container .heading-bullet span {
     font-family: "Poppins SemiBold";
     font-size: 16px;
-    color: #1f2235;
+    color: #264653;
     white-space: normal;
     margin-right: 0;
 }
@@ -272,13 +270,13 @@
     height: 100%;
     transition: width 0.8s ease;
     position: absolute;
-    background-color: #1f2235;
+    background-color: #264653;
     border-radius: 10px;
 }
 .skill-parent span {
     font-family: "Poppins SemiBold";
     font-size: 16px;
-    color: #1f2235;
+    color: #264653;
 }
 
 @media only screen and (max-width: 1110px) {
@@ -305,7 +303,7 @@
     .resume-bullet-details {
         width: 100%;
         padding-left: 0;
-        height: 500px; /* más alto para tablets */
+        height: 500px;
     }
 
     .selected-bullet {
@@ -323,11 +321,11 @@
     }
 
     .resume-bullet-details {
-        height: 600px; /* más espacio para scroll */
+        height: 600px;
     }
 
     .programming-skills-container {
-        grid-template-columns: 1fr; /* una sola columna */
+        grid-template-columns: 1fr;
     }
 }
 @media only screen and (max-width: 480px) {

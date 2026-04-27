@@ -79,7 +79,7 @@ export default function Resume(props) {
       description:
         "Implementación de extensiones y personalizaciones del core del producto, garantizando compatibilidad con la base estándar y minimizando el impacto en futuras actualizaciones.",
       subHeading:
-        "Tecnologías Utilizadas:Java, Spring, Oracle, metodologías agile, Git, Gitlab",
+        "Tecnologías Utilizadas: Java, Spring, Oracle, metodologías agile, Git, Gitlab",
     },
     {
       title: "Plataforma de identidad digital",
@@ -87,7 +87,7 @@ export default function Resume(props) {
       description:
         "Participación en el desarrollo de una plataforma de identidad digital orientada a la gestión segura de credenciales y servicios de autenticación. El proyecto requería un alto nivel técnico, con foco en la definición de contratos API, la construcción de servicios backend escalables y la optimización del rendimiento en flujos críticos.",
       subHeading:
-        "Java 21, Spring Boot, Spring Data JPA, Hibernate, PostgreSQL, Redis, OpenAPI, REST APIs, JUnit 5, Mockito, Git, GitLab, Postman, Scrum.",
+        "Tecnologías Utilizadas: Java 21, Spring Boot, Spring Data JPA, Hibernate, PostgreSQL, Redis, OpenAPI, REST APIs, JUnit 5, Mockito, Git, GitLab, Postman, Scrum.",
     },
     {
       title: "Sector bancario internacional",

@@ -36,7 +36,7 @@ export default function Specialization(props) {
       points: [
         "Experiencia en Java 8–21 y Spring.",
         "Implementación de APIs RESTful y microservicios.",
-        "Optimización de rendimiento y eficiencia.",
+        "Definición de contratos API First con OpenAPI (YAML)",
       ],
       level: "Avanzado",
       percentage: 80,
@@ -81,8 +81,8 @@ export default function Specialization(props) {
       title: "Testing & Calidad de Software",
       points: [
         "Unit testing (JUnit, Mockito).",
-        "Testing de integración y pruebas end-to-end.",
-        "Uso de herramientas de calidad de software.",
+        "Testing de pruebas end-to-end.",
+        "Uso de herramientas de calidad de software (SonarQube).",
         "Realización de pruebas Postman para validar APIs.",
       ],
       level: "Intermedio‑Avanzado",
@@ -152,7 +152,7 @@ export default function Specialization(props) {
     <div className="specialization">
       <ScreenHeading
         title={"Áreas de Especialización"}
-        subHeading={"Mis principales fortalezas y áreas de expertise"}
+        subHeading={"Mis principales fortalezas y áreas de especialización"}
       />
 
       <section className="specialization-section fade-in" id={props.id || ""}>
