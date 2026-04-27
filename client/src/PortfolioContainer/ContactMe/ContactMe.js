@@ -40,26 +40,35 @@ export default function ContactMe(props) {
 
   const submitForm = async (e) => {
     e.preventDefault();
+
+    if (!name || !email || !message) {
+      const msg = "Por favor, rellena todos los campos";
+      setBanner(msg);
+      toast.error(msg);
+      return;
+    }
+
     try {
-      let data = {
+      setBool(true);
+
+      const res = await axios.post("/api/contact", {
         name,
         email,
         message,
-      };
+      });
 
-      setBool(true);
-      const res = await axios.post("/contact", data);
-      if (name.length === 0 || email.length === 0 || message.length === 0) {
-        setBanner(res.data.msg);
-        toast.error(res.data.msg);
-        setBool(false);
-      } else if (res.status === 200) {
+      if (res.status === 200) {
         setBanner(res.data.msg);
         toast.success(res.data.msg);
-        setBool(false);
+        setName("");
+        setEmail("");
+        setMessage("");
       }
     } catch (error) {
+      toast.error("Error al enviar el mensaje");
       console.log(error);
+    } finally {
+      setBool(false);
     }
   };
 

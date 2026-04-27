@@ -1,0 +1,29 @@
+{
+  "name": "proyectos",
+  "version": "1.0.0",
+  "description": "Personal portfolio website built with React, focused on responsive design and modern UI/UX practices.",
+  "homepage": "https://github.com/Sonia-SSR2021/portfolio-react#readme",
+  "bugs": {
+    "url": "https://github.com/Sonia-SSR2021/portfolio-react/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Sonia-SSR2021/portfolio-react.git"
+  },
+  "license": "ISC",
+  "author": "",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "dev": "npm start --prefix client",
+    "build": "npm run build --prefix client"
+  },
+  "dependencies": {
+    "concurrently": "^9.2.1",
+    "cors": "^2.8.6",
+    "dotenv": "^17.4.2",
+    "express": "^5.2.1",
+    "nodemailer": "^8.0.6",
+    "nodemon": "^3.1.14"
+  }
+}

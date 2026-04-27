@@ -31,7 +31,7 @@ export default class ScrollService {
   }
 
   /**
-   * Hace scroll suave hacia la sección "Contact Me" (Contrátame).
+   * Hace scroll suave hacia la sección "Contact Me" (Contacto).
    */
   scrollToHireMe = () => {
     let contactMeScreen = document.getElementById("Contacto");
