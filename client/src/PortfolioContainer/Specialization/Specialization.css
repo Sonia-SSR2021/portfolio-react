@@ -3,12 +3,11 @@
 }
 
 .row {
-  display: block; /* importante */
+  display: block;
 }
 
 .specialization-section {
   padding: 80px 0 80px;
-  /* min-height: 500px; */
   background-image: url("../../assets/Specialization/bg-1.jpg");
   background-position: center;
   background-attachment: fixed;
@@ -25,7 +24,7 @@
   height: 100%;
   z-index: 1;
   opacity: 0.85;
-  background-color: #1f2235;
+  background-color: #264653;
 }
 
 .specialization-section .container {
@@ -52,9 +51,6 @@
 }
 
 .specialization-section .specialization-item {
-  /* padding: 30px;
-  background-color: white;
-  border-radius: 50px 50px 50px 50px; */
   padding: 30px;
   background-color: white;
   border-radius: 30px;
@@ -79,8 +75,6 @@
 }
 
 .specialization-progress {
-  /* margin-top: auto;
-  text-align: center; */
   margin-top: auto;
   padding-top: 10px;
 }
@@ -95,7 +89,7 @@
 
 .progress-fill {
   height: 100%;
-  background: #ff7b00;
+  background: rgb(60, 204, 185);
   border-radius: 10px;
   transition: width 0.6s ease;
 }
@@ -109,9 +103,6 @@
 }
 
 .specialization-icon img {
-  /* width: 50px;
-  height: 50px;
-  object-fit: contain; */
   width: 80px;
   height: 80px;
   object-fit: contain;
@@ -129,13 +120,11 @@
   font-size: 1.4rem;
   font-weight: 700;
   margin-bottom: 15px;
-  color: #1f2235;
+  color: #264653;
   letter-spacing: 0.5px;
 }
 
 .specialization-points {
-  /* flex-grow: 1;
-  padding-left: 20px; */
   padding-left: 20px;
   font-size: 0.95rem;
   line-height: 1.5;

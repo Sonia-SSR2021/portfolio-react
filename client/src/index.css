@@ -87,7 +87,7 @@ body ::-webkit-scrollbar-thumb {
   width: 160px;
   cursor: pointer;
   transition: 0.2s;
-  font-family: "Poppins SemiBold";
+  font-family: "Poppins Bold";
 }
 
 .btn:active {
@@ -98,25 +98,20 @@ body ::-webkit-scrollbar-thumb {
   color: var(--white);
   border: 2px solid linen;
   font-size: 12px;
-  background-color: #1f2235;
+  background-color: rgb(52, 179, 162);
 }
-/* @media only screen and (max-width: 414px) {
-  .primary-btn {
-    font-size: 13px;
-  }
-} */
 
 .primary-btn:hover {
   color: aliceblue;
-  border: 2px solid #ff5823;
-  background-color: #1f2235;
+  border: 2px solid rgb(60, 204, 185);
+  background-color: rgb(60, 204, 185);
 }
 
 .highlighted-btn {
   color: var(--white);
 
   font-size: 12px;
-  background-color: #ff5823;
+  background-color: rgb(214, 130, 143);
 }
 @media only screen and (max-width: 568px) {
   .highlighted-btn {

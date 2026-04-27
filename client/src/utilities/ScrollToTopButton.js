@@ -43,7 +43,7 @@ export default function ScrollToTopButton() {
         bottom: `${bottomOffset}px`,
         width: "50px",
         height: "50px",
-        backgroundColor: "#ff5a3c",
+        backgroundColor: "rgb(60, 204, 185)",
         color: "white",
         border: "none",
         borderRadius: "12px",
