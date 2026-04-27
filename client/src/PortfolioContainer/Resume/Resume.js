@@ -1,6 +1,5 @@
 //TODO Doc
-
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import ScreenHeading from "../../utilities/ScreenHeading/ScreenHeading";
 import ScrollService from "../../utilities/ScrollService";
 import Animations from "../../utilities/Animations";
@@ -18,6 +17,19 @@ export default function Resume(props) {
     const sub =
       ScrollService.currentScreenFadeIn.subscribe(fadeInScreenHandler);
     return () => sub.unsubscribe();
+  }, []);
+
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const checkSize = () => {
+      setIsMobile(window.innerWidth <= 1023);
+    };
+
+    checkSize();
+    window.addEventListener("resize", checkSize);
+
+    return () => window.removeEventListener("resize", checkSize);
   }, []);
 
   const ResumeHeading = (props) => {
@@ -41,6 +53,19 @@ export default function Resume(props) {
             <span>{props.description ? props.description : ""}</span>
           </div>
         </div>
+      </div>
+    );
+  };
+
+  const getMobileView = () => {
+    return (
+      <div className="resume-mobile-container">
+        {resumeBullets.map((bullet, index) => (
+          <div className="mobile-section" key={index}>
+            <h3 className="mobile-title">{bullet.label}</h3>
+            <div>{resumeDetails[index]}</div>
+          </div>
+        ))}
       </div>
     );
   };
@@ -309,16 +334,21 @@ export default function Resume(props) {
           title={"Resume"}
           subHeading={"Detalles sobre mi trayectoria"}
         />
-        <div className="resume-card">
-          <div className="resume-bullets">
-            <div className="bullet-container">
-              <div className="bullet-icons">
-                <div className="bullets">{getBullets()}</div>
+        {isMobile ? (
+          getMobileView()
+        ) : (
+          <div className="resume-card">
+            <div className="resume-bullets">
+              <div className="bullet-container">
+                <div className="bullet-icons">
+                  <div className="bullets">{getBullets()}</div>
+                </div>
               </div>
             </div>
+
+            <div className="resume-bullet-details">{getResumeScreens()}</div>
           </div>
-          <div className="resume-bullet-details">{getResumeScreens()}</div>
-        </div>
+        )}
       </div>
     </div>
   );
