@@ -67,7 +67,7 @@ export default function AboutMe(props) {
                 className="btn primary-btn"
                 onClick={() => ScrollService.scrollHandler.scrollToHireMe()}
               >
-                Contrátame
+                Contacto
               </button>
               <a href="sonia_soriano_cv.pdf" download="Sonia Soriano.pdf">
                 <button className="btn highlighted-btn">Descargar CV</button>
