@@ -20,6 +20,16 @@ import aiIcon from "../../assets/Specialization/ia.png";
 import footerShape from "../../assets/Specialization/shape-bg.png";
 
 export default function Specialization(props) {
+  const [isMobile, setIsMobile] = React.useState(window.innerWidth <= 768);
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth <= 768);
+    };
+
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
   let fadeInScreenHandler = (screen) => {
     if (screen.fadeInScreen !== props.id) return;
     Animations.animations.fadeInScreen(props.id);
@@ -128,50 +138,14 @@ export default function Specialization(props) {
   ];
 
   const settings = {
-    // dots: true,
-    // infinite: true,
-    // speed: 600,
-    // slidesToShow: 3,
-    // slidesToScroll: 1,
-    // autoplay: true,
-    // autoplaySpeed: 3500,
-    // arrows: false,
-    // responsive: [
-    //   {
-    //     breakpoint: 992, // tablets
-    //     settings: { slidesToShow: 2 },
-    //   },
-    //   {
-    //     breakpoint: 768, // móviles
-    //     settings: { slidesToShow: 1 },
-    //   },
-    // ],
     dots: true,
     infinite: true,
     speed: 500,
-    slidesToShow: 3,
+    slidesToShow: isMobile ? 1 : 3,
     slidesToScroll: 1,
     autoplay: true,
     autoplaySpeed: 3500,
     arrows: false,
-    responsive: [
-      {
-        breakpoint: 992, // tablets
-        settings: {
-          slidesToShow: 2,
-          slidesToScroll: 1,
-        },
-      },
-      {
-        breakpoint: 768, // móviles
-        settings: {
-          slidesToShow: 1,
-          slidesToScroll: 1,
-          centerMode: true,
-          centerPadding: "0px",
-        },
-      },
-    ],
   };
 
   return (
