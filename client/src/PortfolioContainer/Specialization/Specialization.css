@@ -60,21 +60,28 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  width: 100%;
 }
 
 .specialization-item:hover {
   transform: translateY(-8px);
 }
 
-.slick-slide {
+/* .slick-slide {
   display: flex !important;
   justify-content: center;
-}
+} */
 
 .slick-slide > div {
   /* padding: 0 15px; */
   padding: 0 8px;
   box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+}
+
+.slick-slide > div > div {
+  width: 100%;
 }
 
 .specialization-progress {
