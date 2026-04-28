@@ -1,5 +1,5 @@
 import React from "react";
-import "./ScreenHeading.css";
+import "./ScreenHeading.css?v=2";
 
 /**
  * Componente ScreenHeading: Componente reusable para encabezados de pantalla.

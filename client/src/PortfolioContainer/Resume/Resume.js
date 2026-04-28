@@ -3,7 +3,7 @@ import React, { useEffect, useState } from "react";
 import ScreenHeading from "../../utilities/ScreenHeading/ScreenHeading";
 import ScrollService from "../../utilities/ScrollService";
 import Animations from "../../utilities/Animations";
-import "./Resume.css";
+import "./Resume.css?v=2";
 
 export default function Resume(props) {
   const [selectBulletIndex, setSelectBulletIndex] = React.useState(0);

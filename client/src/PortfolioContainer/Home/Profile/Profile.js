@@ -1,7 +1,7 @@
 import React from 'react';
 import { TypeAnimation } from 'react-type-animation';
 import ScrollService from '../../../utilities/ScrollService';
-import './Profile.css';
+import './Profile.css?v=2';
 
 export default function Profile() {
   return (
