@@ -55,7 +55,8 @@
   background-color: white;
   border-radius: 30px;
   
-  height: 420px;
+  min-height: 420px;
+  height: auto;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -128,4 +129,35 @@
   padding-left: 20px;
   font-size: 0.95rem;
   line-height: 1.5;
+}
+
+@media (max-width: 768px) {
+  .slick-slide > div {
+    padding: 0 10px;
+  }
+
+  .specialization-section {
+    padding: 40px 0;
+    background-attachment: scroll;
+  }
+
+  .specialization-title {
+    font-size: 1.2rem;
+  }
+
+  .specialization-points {
+    font-size: 0.85rem;
+  }
+
+  .progress-label {
+    font-size: 0.8rem;
+  }
+
+  .footer-image {
+    margin-top: -40px;
+  }
+
+  .footer-image img {
+    height: 80px;
+  }
 }
