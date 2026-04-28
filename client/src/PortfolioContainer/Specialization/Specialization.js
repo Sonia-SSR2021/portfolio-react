@@ -128,9 +128,27 @@ export default function Specialization(props) {
   ];
 
   const settings = {
+    // dots: true,
+    // infinite: true,
+    // speed: 600,
+    // slidesToShow: 3,
+    // slidesToScroll: 1,
+    // autoplay: true,
+    // autoplaySpeed: 3500,
+    // arrows: false,
+    // responsive: [
+    //   {
+    //     breakpoint: 992, // tablets
+    //     settings: { slidesToShow: 2 },
+    //   },
+    //   {
+    //     breakpoint: 768, // móviles
+    //     settings: { slidesToShow: 1 },
+    //   },
+    // ],
     dots: true,
     infinite: true,
-    speed: 600,
+    speed: 500,
     slidesToShow: 3,
     slidesToScroll: 1,
     autoplay: true,
@@ -139,11 +157,19 @@ export default function Specialization(props) {
     responsive: [
       {
         breakpoint: 992, // tablets
-        settings: { slidesToShow: 2 },
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 1,
+        },
       },
       {
         breakpoint: 768, // móviles
-        settings: { slidesToShow: 1 },
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+          centerMode: true,
+          centerPadding: "0px",
+        },
       },
     ],
   };
@@ -160,35 +186,37 @@ export default function Specialization(props) {
           <div className="row">
             <Slider {...settings}>
               {specializationData.map((item, index) => (
-                <div key={index} className="specialization-item">
-                  <div className="specialization-icon">
-                    {typeof item.icon === "string" &&
-                    item.icon.startsWith("http") ? (
-                      <img src={item.icon} alt={item.title} />
-                    ) : typeof item.icon === "string" &&
-                      item.icon.endsWith(".png") ? (
-                      <img src={item.icon} alt={item.title} />
-                    ) : (
-                      item.icon
-                    )}
-                  </div>
-
-                  <h3 className="specialization-title">{item.title}</h3>
-
-                  <ul className="specialization-points">
-                    {item.points.map((point, i) => (
-                      <li key={i}>{point}</li>
-                    ))}
-                  </ul>
-
-                  <div className="specialization-progress">
-                    <div className="progress-bar">
-                      <div
-                        className="progress-fill"
-                        style={{ width: `${item.percentage}%` }}
-                      ></div>
+                <div key={index}>
+                  <div className="specialization-item">
+                    <div className="specialization-icon">
+                      {typeof item.icon === "string" &&
+                      item.icon.startsWith("http") ? (
+                        <img src={item.icon} alt={item.title} />
+                      ) : typeof item.icon === "string" &&
+                        item.icon.endsWith(".png") ? (
+                        <img src={item.icon} alt={item.title} />
+                      ) : (
+                        item.icon
+                      )}
                     </div>
-                    <span className="progress-label">{item.level}</span>
+
+                    <h3 className="specialization-title">{item.title}</h3>
+
+                    <ul className="specialization-points">
+                      {item.points.map((point, i) => (
+                        <li key={i}>{point}</li>
+                      ))}
+                    </ul>
+
+                    <div className="specialization-progress">
+                      <div className="progress-bar">
+                        <div
+                          className="progress-fill"
+                          style={{ width: `${item.percentage}%` }}
+                        ></div>
+                      </div>
+                      <span className="progress-label">{item.level}</span>
+                    </div>
                   </div>
                 </div>
               ))}
