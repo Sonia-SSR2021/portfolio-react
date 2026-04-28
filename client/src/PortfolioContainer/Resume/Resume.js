@@ -331,7 +331,7 @@ export default function Resume(props) {
     >
       <div className="resume-content">
         <ScreenHeading
-          title={"Resume"}
+          title={"Trayectoria"}
           subHeading={"Detalles sobre mi trayectoria"}
         />
         {isMobile ? (
