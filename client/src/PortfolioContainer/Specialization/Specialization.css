@@ -72,7 +72,9 @@
 }
 
 .slick-slide > div {
-  padding: 0 15px;
+  /* padding: 0 15px; */
+  padding: 0 8px;
+  box-sizing: border-box;
 }
 
 .specialization-progress {
@@ -139,6 +141,7 @@
   .specialization-section {
     padding: 40px 0;
     background-attachment: scroll;
+    overflow-x: hidden;
   }
 
   .specialization-title {
@@ -147,6 +150,11 @@
 
   .specialization-points {
     font-size: 0.85rem;
+  }
+
+  .specialization-item {
+    min-height: auto;
+    padding: 20px;
   }
 
   .progress-label {

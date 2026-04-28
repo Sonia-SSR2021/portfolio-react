@@ -12,10 +12,13 @@
     margin: 50px 0 0 0;
 }
 .about-me-parent{
-    max-width: 1000px;
-    width: 70%;
+    /* max-width: 1000px;
+    width: 70%; */
+    width: 90%;
+    max-width: 900px;
 }
 .about-me-card{
+    flex-wrap: wrap;
     display: flex;
     width: 100%;
     box-shadow: 0 0px 20px -2px #264653;
@@ -72,6 +75,7 @@
     }
     .about-me-details{
         width: 100%;
+        padding: 20px;
     }
 }
 @media only screen and (max-width: 466px){
