@@ -198,8 +198,15 @@
     font-size: 16px;
     font-family: "Poppins SemiBold";
     color: #111;
-    white-space: nowrap;
+    white-space: normal;
+    word-break: break-word;
     margin-right: auto;
+}
+.resume-container,
+.resume-content,
+.resume-mobile-container {
+    max-width: 100%;
+    overflow-x: hidden;
 }
 .resume-sub-heading {
     font-size: 14px;
@@ -354,11 +361,17 @@
         font-size: 13px;
     }
 
+    .resume-mobile-container {
+        padding: 10px;
+    }
+
     .resume-heading {
-        padding: 0 10px;
+        padding: 0;
     }
 
     .skill-percentage {
         min-width: 140px;
     }
+
+    
 }
