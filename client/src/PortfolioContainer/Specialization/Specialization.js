@@ -199,7 +199,7 @@ export default function Specialization(props) {
         </div>
       </section>
 
-      <div className="footer-image">
+      <div className="footer-image wave-shape">
         <img src={footerShape} alt="footer decoration" />
       </div>
     </div>

@@ -5,7 +5,9 @@ export default function Footer() {
   return (
     <div className="footer-container">
       <div className="footer-parent">
-        <img src={require("../../../assets/Home/shape-bg.png")} alt="No se encontró la imagen" />
+        <div className="wave-shape">
+          <img src={require("../../../assets/Home/shape-bg.png")} alt="Decoración de forma de onda" />
+        </div>
       </div>
     </div>
   );

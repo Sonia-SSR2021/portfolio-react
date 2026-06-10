@@ -24,7 +24,7 @@
   height: 100%;
   z-index: 1;
   opacity: 0.85;
-  background-color: #264653;
+  background-color: var(--nav-bg);
 }
 
 .specialization-section .container {
@@ -48,11 +48,30 @@
 .footer-image img {
   max-width: 100%;
   height: 130px;
+  transition: filter 0.3s ease;
+}
+
+[data-theme="light"] .footer-image img {
+  filter: brightness(1) contrast(1);
+}
+
+[data-theme="dark"] .footer-image img {
+  filter: brightness(0.15) saturate(0) contrast(1.2) invert(1);
+}
+
+.wave-shape {
+  filter: brightness(0.95) contrast(1.05);
+}
+
+[data-theme="dark"] .wave-shape {
+  filter: brightness(0.12) contrast(1.3) invert(1);
 }
 
 .specialization-section .specialization-item {
   padding: 30px;
-  background-color: white;
+  background-color: var(--color-surface);
+  color: var(--color-text);
+  border: 1px solid var(--color-border);
   border-radius: 30px;
   
   min-height: 420px;
@@ -92,14 +111,14 @@
 .progress-bar {
   width: 100%;
   height: 8px;
-  background: #ddd;
+  background: var(--scroll-track);
   border-radius: 10px;
   overflow: hidden;
 }
 
 .progress-fill {
   height: 100%;
-  background: rgb(60, 204, 185);
+  background: var(--accent);
   border-radius: 10px;
   transition: width 0.6s ease;
 }
@@ -108,7 +127,7 @@
   display: block;
   margin-top: 6px;
   font-weight: 600;
-  color: #333;
+  color: var(--color-text-muted);
   font-size: 0.9rem;
 }
 
@@ -130,7 +149,7 @@
   font-size: 1.4rem;
   font-weight: 700;
   margin-bottom: 15px;
-  color: #264653;
+  color: var(--color-text);
   letter-spacing: 0.5px;
 }
 

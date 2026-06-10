@@ -14,6 +14,24 @@
     max-width: 100%;
     height: 130px;
 }
+
+.wave-shape {
+    filter: brightness(0.95) contrast(1.05);
+}
+
+.wave-shape img {
+    width: 100%;
+    transition: filter 0.3s ease;
+}
+
+[data-theme="light"] .wave-shape img {
+    filter: brightness(1) contrast(1);
+}
+
+[data-theme="dark"] .wave-shape img {
+    filter: brightness(0.15) saturate(0) contrast(1.2) invert(1);
+}
+
 @media only screen and (max-width: 1110px) {
     .footer-parent{
         display: flex;
