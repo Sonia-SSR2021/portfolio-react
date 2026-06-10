@@ -81,164 +81,141 @@ export default function Resume(props) {
   ];
 
   const programmingSkillsDetails = [
-    { skill: "Java", ratingPercentage: 75 },
-    { skill: "Spring Boot", ratingPercentage: 65 },
-    { skill: "PostgreSQL", ratingPercentage: 60 },
-    { skill: "Git", ratingPercentage: 70 },
-    { skill: "REST APIs", ratingPercentage: 70 },
-    { skill: "Testing (JUnit, Mockito)", ratingPercentage: 60 },
-    { skill: "Maven", ratingPercentage: 65 },
-    { skill: "Spring Data JPA", ratingPercentage: 70 },
-    { skill: "Microservicios", ratingPercentage: 60 },
+    { skill: t('resume.skills.java'), ratingPercentage: 75 },
+    { skill: t('resume.skills.springboot'), ratingPercentage: 65 },
+    { skill: t('resume.skills.postgresql'), ratingPercentage: 60 },
+    { skill: t('resume.skills.git'), ratingPercentage: 70 },
+    { skill: t('resume.skills.restapis'), ratingPercentage: 70 },
+    { skill: t('resume.skills.testing'), ratingPercentage: 60 },
+    { skill: t('resume.skills.maven'), ratingPercentage: 65 },
+    { skill: t('resume.skills.springdatajpa'), ratingPercentage: 70 },
+    { skill: t('resume.skills.microservices'), ratingPercentage: 60 },
   ];
 
   const projectsDetails = [
     {
-      title: "Personal Portfolio Website",
-      duration: { fromDate: "2026", toDate: "2026" },
-      description:
-        "Un sitio web de portafolio personal para mostrar mis proyectos y habilidades, creado con React y alojado en GitHub Pages.",
-      subHeading: "Tecnologías Utilizadas: React JS, Bootstrap, GitHub Pages",
+      title: t('resume.projects.project1'),
+      duration: { fromDate: t('resume.projects.project1_from_dates'), toDate: t('resume.projects.project1_to_dates')},
+      description: t('resume.projects.project1_desc'),
+      subHeading: t('resume.projects.project1_tech'),
     },
     {
-      title: "Sistema de gestión del sector público",
-      duration: { fromDate: "2026", toDate: "Actualidad" },
-      description:
-        "Implementación de extensiones y personalizaciones del core del producto, garantizando compatibilidad con la base estándar y minimizando el impacto en futuras actualizaciones.",
-      subHeading:
-        "Tecnologías Utilizadas: Java, Spring, Oracle, metodologías agile, Git, Gitlab",
+      title: t('resume.projects.project2'),
+      duration: { fromDate: t('resume.projects.project2_from_dates'), toDate: t('resume.projects.project2_to_dates') },
+      description: t('resume.projects.project2_desc'),
+      subHeading: t('resume.projects.project2_tech'),
     },
     {
-      title: "Plataforma de identidad digital",
-      duration: { fromDate: "2023", toDate: "2026" },
-      description:
-        "Participación en el desarrollo de una plataforma de identidad digital orientada a la gestión segura de credenciales y servicios de autenticación. El proyecto requería un alto nivel técnico, con foco en la definición de contratos API, la construcción de servicios backend escalables y la optimización del rendimiento en flujos críticos.",
-      subHeading:
-        "Tecnologías Utilizadas: Java 21, Spring Boot, Spring Data JPA, Hibernate, PostgreSQL, Redis, OpenAPI, REST APIs, JUnit 5, Mockito, Git, GitLab, Postman, Scrum.",
+      title: t('resume.projects.project3'),
+      duration: { fromDate: t('resume.projects.project3_from_dates'), toDate: t('resume.projects.project3_to_dates') },
+      description: t('resume.projects.project3_desc'),
+      subHeading: t('resume.projects.project3_tech'),
     },
     {
-      title: "Sector bancario internacional",
-      duration: { fromDate: "2022", toDate: "2022" },
-      description:
-        "Participación en un proyecto de automatización de procesos para una entidad bancaria internacional, centrado en el diseño y desarrollo de flujos BPM, la implementación de lógica de negocio y la mejora continua de procesos críticos mediante la plataforma Appian.",
-      subHeading:
-        "Tecnologías Utilizadas: Appian, BPM, automatización de procesos, Agile (Scrum), documentación funcional y técnica.",
+      title: t('resume.projects.project4'),
+      duration: { fromDate: t('resume.projects.project4_from_dates'), toDate: t('resume.projects.project4_to_dates') },
+      description: t('resume.projects.project4_desc'),
+      subHeading: t('resume.projects.project4_tech'),
     },
   ];
 
   const resumeDetails = [
     <div className="resume-screen-container" key="education">
       <ResumeHeading
-        heading={"IES Mare Nostrum"}
-        subHeading={"Desarrollo de aplicaciones web"}
-        fromDate={"2020"}
-        toDate={"2022"}
+        heading={t('resume.education.school1')}
+        subHeading={t('resume.education.school1_degree')}
+        fromDate={t('resume.education.school1_from_dates')}
+        toDate={t('resume.education.school1_to_dates')}
       />
       <ResumeHeading
-        heading={"Universidad de Alicante"}
-        subHeading={
-          "Experto en redes sociales, estrategia y comunicación digital"
-        }
-        fromDate={"2019"}
-        toDate={"2020"}
+        heading={t('resume.education.university1')}
+        subHeading={t('resume.education.university1_degree')}
+        fromDate={t('resume.education.university1_from_dates')}
+        toDate={t('resume.education.university1_to_dates')}
       />
       <ResumeHeading
-        heading={"Universidad de Alicante"}
-        subHeading={"Grado en publicidad y relaciones públicas"}
-        fromDate={"2015"}
-        toDate={"2019"}
+        heading={t('resume.education.university2')}
+        subHeading={t('resume.education.university2_degree')}
+        fromDate={t('resume.education.university2_from_dates')}
+        toDate={t('resume.education.university2_to_dates')}
       />
     </div>,
     <div className="resume-screen-container" key="work-experience">
       <ResumeHeading
-        heading={"Inetum"}
-        subHeading={"Desarrollador de software sénior"}
-        fromDate={"2022"}
-        toDate={"Actualidad"}
+        heading={t('resume.experience.company1')}
+        subHeading={t('resume.experience.company1_position')}
+        fromDate={t('resume.experience.company1_from_dates')}
+        toDate={t('resume.experience.company1_to_dates')}
       />
       <div className="experience-description">
         <span className="resume-description-text">
-          Desarrollador de software backend empleando tecnologías como Java,
-          Spring Boot y PostgreSQL.
+          {t('resume.experience.company1_desc')}
         </span>
       </div>
       <div className="experience-description">
         <span className="resume-description-text">
-          - Desarrollo backend con Java en entornos enterprise, participando en
-          la evolución de plataformas complejas y mantenimiento de sistemas en
-          producción.
+          {t('resume.experience.company1_details.0')}
         </span>
         <br />
         <span className="resume-description-text">
-          - Diseño e implementación de APIs RESTful siguiendo enfoque API First
-          (OpenAPI) y arquitectura en capas, asegurando desacoplamiento y
-          mantenibilidad.
+          {t('resume.experience.company1_details.1')}
         </span>
         <br />
         <span className="resume-description-text">
-          - Gestión de persistencia con Spring Data JPA + PostgreSQL,
-          optimización de consultas y uso de Redis para mejora de rendimiento.
+          {t('resume.experience.company1_details.2')}
         </span>
         <br />
         <span className="resume-description-text">
-          - Desarrollo de testing (JUnit, Mockito), revisión de código y trabajo
-          en entornos Agile (Scrum) con GitLab, contribuyendo a buenas prácticas
-          y calidad del software.
+          {t('resume.experience.company1_details.3')}
         </span>
       </div>
       <ResumeHeading
-        heading={"Accenture"}
-        subHeading={"Business & Integration Arch Associate"}
-        fromDate={"2022"}
-        toDate={"2022"}
+        heading={t('resume.experience.company2')}
+        subHeading={t('resume.experience.company2_position')}
+        fromDate={t('resume.experience.company2_from_dates')}
+        toDate={t('resume.experience.company2_to_dates')}
       />
       <div className="experience-description">
         <span className="resume-description-text">
-          Participación en proyecto internacional, centrado en automatización de
-          procesos con Appian dentro de un entorno Agile (Scrum).
+          {t('resume.experience.company2_desc')}
         </span>
       </div>
       <div className="experience-description">
         <span className="resume-description-text">
-          - Diseño e implementación de lógica de negocio y automatización de
-          procesos mediante la utilización de Appian.
+          {t('resume.experience.company2_details.0')}
         </span>
         <br />
         <span className="resume-description-text">
-          - Participación activa en equipo internacional bajo metodología Agile
-          (Scrum).
+          {t('resume.experience.company2_details.1')}
         </span>
         <br />
         <span className="resume-description-text">
-          - Elaboración y mantenimiento de documentación técnica y funcional de
-          procesos, garantizando claridad y trazabilidad de las soluciones
-          implementadas.
+          {t('resume.experience.company2_details.2')}
         </span>
       </div>
       <ResumeHeading
-        heading={"Walcon Virtual"}
-        subHeading={"Diseñadora gráfica"}
-        fromDate={"2020"}
-        toDate={"2020"}
+        heading={t('resume.experience.company3')}
+        subHeading={t('resume.experience.company3_position')}
+        fromDate={t('resume.experience.company3_from_dates')}
+        toDate={t('resume.experience.company3_to_dates')}
       />
       <ResumeHeading
-        heading={"JLC Creativos"}
-        subHeading={"Diseñadora gráfica"}
-        fromDate={"2019"}
-        toDate={"2019"}
+        heading={t('resume.experience.company4')}
+        subHeading={t('resume.experience.company4_position')}
+        fromDate={t('resume.experience.company4_from_dates')}
+        toDate={t('resume.experience.company4_to_dates')}
       />
       <ResumeHeading
-        heading={"A-puntadas"}
-        subHeading={"Diseñadora gráfica"}
-        fromDate={"2018"}
-        toDate={"2018"}
+        heading={t('resume.experience.company5')}
+        subHeading={t('resume.experience.company5_position')}
+        fromDate={t('resume.experience.company5_from_dates')}
+        toDate={t('resume.experience.company5_to_dates')}
       />
     </div>,
 
     <div
       className="resume-screen-container programming-skills-container"
-      key="programming-skills"
-    >
+      key="programming-skills">
       {programmingSkillsDetails.map((skill, index) => (
         <div className="skill-parent" key={index}>
           <div className="heading-bullet">
@@ -269,16 +246,16 @@ export default function Resume(props) {
 
     <div className="resume-screen-container" key="interests">
       <ResumeHeading
-        heading="Senderismo y naturaleza"
-        description="Disfruto del senderismo y las actividades al aire libre, lo que me permite mantener un equilibrio entre el ámbito profesional y personal, fomentando la constancia y el bienestar."
+        heading={t('resume.interests.interest1')}
+        description={t('resume.interests.interest1_desc')}
       />
       <ResumeHeading
-        heading="Lectura"
-        description="Interesada en la lectura de novelas de distintos géneros, especialmente fantasía, romance y comedia, desarrollando la creatividad y la capacidad de concentración."
+        heading={t('resume.interests.interest2')}
+        description={t('resume.interests.interest2_desc')}
       />
       <ResumeHeading
-        heading="Videojuegos cooperativos"
-        description="Aficionada a videojuegos en equipo, donde se potencian habilidades como la comunicación, la estrategia y la resolución de problemas."
+        heading={t('resume.interests.interest3')}
+        description={t('resume.interests.interest3_desc')}
       />
     </div>,
   ];

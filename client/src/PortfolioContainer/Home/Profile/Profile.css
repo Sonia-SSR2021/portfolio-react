@@ -25,8 +25,8 @@
 }
 .profile-details-role h1 {
     font-size: 40px;
-    font-family: cursive;
-    font-style: italic;
+    font-family: 'Courier New', Courier, monospace;
+    font-style: normal;
 }
 .primary-text {
     color: var(--white);

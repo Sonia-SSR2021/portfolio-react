@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useRef } from "react";
+import { useTranslation } from "react-i18next";
 import { TOTAL_SCREENS, GET_SCREEN_INDEX } from "../../../utilities/commonUtils";
 import ScrollService from "../../../utilities/ScrollService";
 import { faBars, faTimes } from "@fortawesome/free-solid-svg-icons";
@@ -13,6 +14,8 @@ import LanguageSwitcher from './LanguageSwitcher';
  * @returns {JSX.Element} El componente Header renderizado.
  */
 export default function Header() {
+    const { t } = useTranslation();
+
     /**
      * Estado para el índice de la pantalla seleccionada actualmente.
      * @type {[number, function]} selectedScreen - Índice de la pantalla activa, y función para actualizarlo.
@@ -65,13 +68,14 @@ export default function Header() {
      * @returns {JSX.Element[]} Array de elementos JSX para las opciones del header.
      */
     const getHeaderOptions = () => {
+        const navMap = { Inicio: "home", SobreMi: "about", Trayectoria: "resume", Especializacion: "specialization", Contacto: "contact" };
         return(
             TOTAL_SCREENS.map((screen, i) => (
                 <div
                     key={screen.screen_name}
                     className={getHeaderOptionsClass(i)}
                     onClick={() => switchScreen(i, screen)}>
-                    <span>{screen.screen_name}</span>
+                    <span>{t(`nav.${navMap[screen.screen_name]}`)}</span>
                 </div>
             ))
         )
