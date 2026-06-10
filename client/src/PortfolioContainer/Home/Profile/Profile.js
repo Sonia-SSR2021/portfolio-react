@@ -1,9 +1,25 @@
 import React from 'react';
+import { useTranslation } from 'react-i18next';
 import { TypeAnimation } from 'react-type-animation';
 import ScrollService from '../../../utilities/ScrollService';
 import './Profile.css?v=2';
 
 export default function Profile() {
+  const { t } = useTranslation();
+
+  const roleSequence = [
+    t('home.roles.backend'),
+    1000,
+    t('home.roles.springboot'),
+    1000,
+    t('home.roles.apis'),
+    1000,
+    t('home.roles.microservices'),
+    1000,
+    t('home.roles.blockchain'),
+    1000,
+  ];
+
   return (
     <div className='profile-container'>
       <div className='profile-parent'>
@@ -22,7 +38,7 @@ export default function Profile() {
           <div className='profile-details-name'>
             <span className='primary-text'>
               {" "}
-              Hola, soy <span className='highlighted-text'>Sonia</span>
+              {t('home.greeting')} <span className='highlighted-text'>{t('home.name')}</span>
             </span>
           </div>
 
@@ -31,18 +47,7 @@ export default function Profile() {
               {" "}
               <h1>
                 <TypeAnimation
-                  sequence={[
-                    'Desarrolladora Java Backend 💻',
-                    1000,
-                    'Desarrolladora Spring Boot ⚡️',
-                    1000,
-                    'Desarrollo APIs REST 🌐',
-                    1000,
-                    'Desarrollo de Microservicios ⚙️',
-                    1000,
-                    'Identidad Digital Blockchain 🚀',
-                    1000,
-                  ]}
+                  sequence={roleSequence}
                   wrapper="span"
                   cursor={true}
                   repeat={Infinity}
@@ -50,7 +55,7 @@ export default function Profile() {
                 />
               </h1>
               <span className='profile-role-tagline'>
-                Especializada en desarrollo backend con Java, Spring Boot y APIs REST.
+                {t('home.tagline')}
               </span>
             </span>
           </div>
@@ -58,10 +63,10 @@ export default function Profile() {
           <div className='profile-options'>
             <button className='btn primary-btn' onClick={() => ScrollService.scrollHandler.scrollToHireMe()}>
               {""}
-              Contacto{" "}
+              {t('home.contactButton')}{" "}
             </button>
             <a href='sonia_soriano_cv.pdf' download='Sonia Soriano.pdf'>
-              <button className='btn highlighted-btn'>Descargar CV</button>
+              <button className='btn highlighted-btn'>{t('home.downloadCV')}</button>
             </a>
             </div>
           </div>

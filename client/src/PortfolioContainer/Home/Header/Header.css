@@ -33,6 +33,9 @@ html, body {
 .header-hamburger {
   display: none;
   cursor: var(--white);
+  position: relative;
+  z-index: 3000;
+
 }
 .header-option-separator {
   margin: 0 50px 0 0;
@@ -107,6 +110,7 @@ html, body {
     width: 100%;
     padding: 0 40px;
     position: relative;
+    z-index: 1000;
   }
   .header-options {
     display: flex;
@@ -119,9 +123,9 @@ html, body {
     max-width: 100%;
     overflow-x: hidden;
     justify-content: space-around;
-    background-color: var(--nav-bg);
-    z-index: 1000;
-    opacity: 0.8;
+    background-color: rgba(38, 70, 83, 0.95);
+    z-index: 2000;
+    /* opacity: 0.8; */
     transition: all 0.8s ease-out;
   }
   .header-option-separator {
@@ -138,6 +142,9 @@ html, body {
     cursor: pointer;
     margin: 0px 10px;
     color: var(--white);
+    position: relative;
+    z-index: 3001;
+
   }
   .show-hamburger-options {
     left: 0;

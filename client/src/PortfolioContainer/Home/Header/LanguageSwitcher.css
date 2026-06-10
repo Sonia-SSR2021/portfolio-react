@@ -1,0 +1,133 @@
+.language-switcher-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.language-toggle {
+  width: 70px;
+  height: 36px;
+  border-radius: 5px;
+  border: 2px solid var(--color-text);
+  background: transparent;
+  color: var(--color-text);
+  cursor: pointer;
+  padding: 0 8px;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-weight: 600;
+  font-size: 13px;
+  margin-left: 10px;
+  flex-shrink: 0;
+  font-family: "Poppins Bold";
+  gap: 4px;
+}
+
+.language-toggle:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+  background: var(--color-overlay);
+}
+
+.lang-display {
+  display: inline-block;
+  flex: 1;
+}
+
+.lang-chevron {
+  font-size: 10px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.2s ease;
+}
+
+/* Dropdown */
+.language-dropdown {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  margin-top: 4px;
+  background: var(--color-surface);
+  border: 1px solid var(--color-text);
+  border-radius: 4px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  z-index: 1001;
+  min-width: 150px;
+  overflow: hidden;
+  animation: slideDown 0.2s ease;
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.language-option {
+  width: 100%;
+  padding: 10px 12px;
+  border: none;
+  background: transparent;
+  color: var(--color-text);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-family: "Poppins Bold";
+  font-size: 12px;
+  transition: all 0.15s ease;
+  text-align: left;
+}
+
+.language-option:hover {
+  background: var(--color-overlay);
+}
+
+.language-option.active {
+  background: var(--accent);
+  color: var(--white);
+}
+
+.option-code {
+  font-weight: 700;
+  min-width: 25px;
+}
+
+.option-name {
+  flex: 1;
+}
+
+@media only screen and (max-width: 768px) {
+  .language-toggle {
+    width: 46px;
+    height: 30px;
+    font-size: 11px;
+  }
+
+  .language-dropdown {
+    min-width: 140px;
+  }
+
+  .language-option {
+    padding: 9px 10px;
+    font-size: 11px;
+  }
+}
+
+@media only screen and (max-width: 970px) {
+  .language-toggle {
+    width: 42px;
+    height: 24px;
+    margin-left: 8px;
+    margin-right: 8px;
+    font-size: 10px;
+  }
+}
