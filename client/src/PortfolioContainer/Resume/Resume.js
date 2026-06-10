@@ -1,11 +1,13 @@
 //TODO Doc
 import React, { useEffect, useState } from "react";
+import { useTranslation } from "react-i18next";
 import ScreenHeading from "../../utilities/ScreenHeading/ScreenHeading";
 import ScrollService from "../../utilities/ScrollService";
 import Animations from "../../utilities/Animations";
 import "./Resume.css?v=2";
 
 export default function Resume(props) {
+  const { t } = useTranslation();
   const [selectBulletIndex, setSelectBulletIndex] = React.useState(0);
   const [carousalOffSetStyle, setCarousalOffSetStyle] = React.useState({});
 
@@ -71,11 +73,11 @@ export default function Resume(props) {
   };
 
   const resumeBullets = [
-    { label: "Educación", logoSrc: "education.svg" },
-    { label: "Experiencia", logoSrc: "work-history.svg" },
-    { label: "Habilidades", logoSrc: "programming-skills.svg" },
-    { label: "Proyectos", logoSrc: "projects.svg" },
-    { label: "Intereses", logoSrc: "interests.svg" },
+    { label: t('resume.sections.education'), logoSrc: "education.svg" },
+    { label: t('resume.sections.experience'), logoSrc: "work-history.svg" },
+    { label: t('resume.sections.skills'), logoSrc: "programming-skills.svg" },
+    { label: t('resume.sections.projects'), logoSrc: "projects.svg" },
+    { label: t('resume.sections.interests'), logoSrc: "interests.svg" },
   ];
 
   const programmingSkillsDetails = [
@@ -331,8 +333,8 @@ export default function Resume(props) {
     >
       <div className="resume-content">
         <ScreenHeading
-          title={"Trayectoria"}
-          subHeading={"Detalles sobre mi trayectoria"}
+          title={t('resume.title')}
+          subHeading={t('resume.subtitle')}
         />
         {isMobile ? (
           getMobileView()

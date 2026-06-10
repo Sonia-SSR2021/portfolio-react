@@ -1,9 +1,10 @@
-import React,{useState} from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { TOTAL_SCREENS, GET_SCREEN_INDEX } from "../../../utilities/commonUtils";
 import ScrollService from "../../../utilities/ScrollService";
-import {faBars} from "@fortawesome/free-solid-svg-icons";
-import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
+import { faBars, faTimes } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import "./Header.css?v=2";
+import LanguageSwitcher from './LanguageSwitcher';
 
 /**
  * Componente Header: Renderiza la barra de navegación superior del portfolio.
@@ -23,6 +24,21 @@ export default function Header() {
      * @type {[boolean, function]} showHeaderOptions - Booleano para mostrar/ocultar opciones, y función para alternarlo.
      */
     const [showHeaderOptions, setShowHeaderOptions] = useState(false);
+
+    useEffect(() => {
+        const handleClickOutside = (event) => {
+            if (!event.target.closest(".header-parent")) {
+                setShowHeaderOptions(false);
+            }
+        };
+
+        document.addEventListener("click", handleClickOutside);
+
+        return () => {
+            document.removeEventListener("click", handleClickOutside);
+        };
+    }, []);
+
 
     /**
      * Actualiza el estado de la pantalla seleccionada basado en el evento de ScrollService.
@@ -92,20 +108,30 @@ export default function Header() {
         setShowHeaderOptions(false);
     }
 
+    const menuRef = useRef(null);
+
 
     return (
         <div>
-            <div className="header-container" onClick={() => setShowHeaderOptions(!showHeaderOptions)}>
-                <div className="header-parent">
-                    <div className="header-hamburger" onClick={() => setShowHeaderOptions(!showHeaderOptions)}>
-                        <FontAwesomeIcon className="header-hamburger-bars" icon={faBars} />
+            <div className="header-container">
+                <div className="header-parent" ref={menuRef}>
+                    <div className="header-hamburger" onClick={(e) => {
+                        e.stopPropagation();
+                        setShowHeaderOptions(!showHeaderOptions);
+                    }}>
+                        <FontAwesomeIcon className="header-hamburger-bars" icon={showHeaderOptions ? faTimes : faBars} />
                     </div>
-                    <div className = "header-logo">
+                    <div className="header-logo">
                         <span>Sonia~</span>
                     </div>
-                    <div className={(showHeaderOptions) ? "header-options show-hamburger-options" : "header-options"}>
+                    <div className={(showHeaderOptions) ? "header-options show-hamburger-options" : "header-options"} onClick={(e) => e.stopPropagation()}>
                         {getHeaderOptions()}
                     </div>
+
+                    <div onClick={(e) => e.stopPropagation()}>
+                        <LanguageSwitcher />
+                    </div>
+
                 </div>
             </div>
         </div>
