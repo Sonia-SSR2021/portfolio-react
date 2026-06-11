@@ -285,6 +285,15 @@
     font-size: 16px;
     color: var(--color-text);
 }
+
+[data-theme="dark"] .skill-percentage {
+    background-color: rgba(232, 241, 247, 0.35);
+}
+
+[data-theme="dark"] .skill-percentage .active-percentage-bar {
+    background-color: var(--accent);
+}
+
 .resume-mobile-container {
     display: flex;
     flex-direction: column;
@@ -374,4 +383,17 @@
     }
 
     
+}
+
+/* Dark mode specific styling for Resume */
+[data-theme="dark"] .selected-bullet::before {
+    background-color: var(--accent);
+}
+
+[data-theme="dark"] .bullet-icons {
+    background-color: var(--accent);
+}
+
+[data-theme="dark"] .resume-bullet-details {
+    box-shadow: -15px 0 25px rgba(60, 204, 192, 0.3);
 }

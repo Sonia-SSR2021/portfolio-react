@@ -51,22 +51,6 @@
   transition: filter 0.3s ease;
 }
 
-[data-theme="light"] .footer-image img {
-  filter: brightness(1) contrast(1);
-}
-
-[data-theme="dark"] .footer-image img {
-  filter: brightness(0.15) saturate(0) contrast(1.2) invert(1);
-}
-
-.wave-shape {
-  filter: brightness(0.95) contrast(1.05);
-}
-
-[data-theme="dark"] .wave-shape {
-  filter: brightness(0.12) contrast(1.3) invert(1);
-}
-
 .specialization-section .specialization-item {
   padding: 30px;
   background-color: var(--color-surface);
