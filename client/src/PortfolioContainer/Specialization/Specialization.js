@@ -19,9 +19,12 @@ import cicdIcon from "../../assets/Specialization/ci-cd.png";
 import agileIcon from "../../assets/Specialization/agile.png";
 import aiIcon from "../../assets/Specialization/ia.png";
 import footerShape from "../../assets/Specialization/shape-bg.png";
+import footerShapeDark from "../../assets/Home/shape-bg-black.png";
+import { useTheme } from "../../context/ThemeContext";
 
 export default function Specialization(props) {
   const { t } = useTranslation();
+  const { isDarkMode } = useTheme();
   const [isMobile, setIsMobile] = React.useState(window.innerWidth <= 768);
   useEffect(() => {
     const handleResize = () => {
@@ -163,8 +166,8 @@ export default function Specialization(props) {
         </div>
       </section>
 
-      <div className="footer-image">
-        <img src={footerShape} alt="footer decoration" />
+      <div className="footer-image wave-shape">
+        <img src={isDarkMode ? footerShapeDark : footerShape} alt="footer decoration" />
       </div>
     </div>
   );

@@ -94,28 +94,34 @@ export default function Resume(props) {
 
   const projectsDetails = [
     {
-      title: t('resume.projects.project1'),
-      duration: { fromDate: t('resume.projects.project1_from_dates'), toDate: t('resume.projects.project1_to_dates')},
-      description: t('resume.projects.project1_desc'),
-      subHeading: t('resume.projects.project1_tech'),
+      title: t('resume.projects.project_portfolio'),
+      duration: { fromDate: t('resume.projects.project_portfolio_from_dates'), toDate: t('resume.projects.project_portfolio_to_dates')},
+      description: t('resume.projects.project_portfolio_desc'),
+      subHeading: t('resume.projects.project_portfolio_tech'),
     },
     {
-      title: t('resume.projects.project2'),
-      duration: { fromDate: t('resume.projects.project2_from_dates'), toDate: t('resume.projects.project2_to_dates') },
-      description: t('resume.projects.project2_desc'),
-      subHeading: t('resume.projects.project2_tech'),
+      title: t('resume.projects.project_Alava'),
+      duration: { fromDate: t('resume.projects.project_Alava_from_dates'), toDate: t('resume.projects.project_Alava_to_dates') },
+      description: t('resume.projects.project_Alava_desc'),
+      subHeading: t('resume.projects.project_Alava_tech'),
     },
     {
-      title: t('resume.projects.project3'),
-      duration: { fromDate: t('resume.projects.project3_from_dates'), toDate: t('resume.projects.project3_to_dates') },
-      description: t('resume.projects.project3_desc'),
-      subHeading: t('resume.projects.project3_tech'),
+      title: t('resume.projects.project_dalion'),
+      duration: { fromDate: t('resume.projects.project_dalion_from_dates'), toDate: t('resume.projects.project_dalion_to_dates') },
+      description: t('resume.projects.project_dalion_desc'),
+      subHeading: t('resume.projects.project_dalion_tech'),
     },
     {
-      title: t('resume.projects.project4'),
-      duration: { fromDate: t('resume.projects.project4_from_dates'), toDate: t('resume.projects.project4_to_dates') },
-      description: t('resume.projects.project4_desc'),
-      subHeading: t('resume.projects.project4_tech'),
+      title: t('resume.projects.project_etnic'),
+      duration: { fromDate: t('resume.projects.project_etnic_from_dates'), toDate: t('resume.projects.project_etnic_to_dates') },
+      description: t('resume.projects.project_etnic_desc'),
+      subHeading: t('resume.projects.project_etnic_tech'),
+    },
+    {
+      title: t('resume.projects.project_banking'),
+      duration: { fromDate: t('resume.projects.project_banking_from_dates'), toDate: t('resume.projects.project_banking_to_dates') },
+      description: t('resume.projects.project_banking_desc'),
+      subHeading: t('resume.projects.project_banking_tech'),
     },
   ];
 

@@ -57,6 +57,9 @@ body {
   font-family: "Poppins Regular";
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  transition: background-color 0.25s ease, color 0.25s ease;
 }
 
 code {
@@ -70,15 +73,15 @@ code {
 }
 
 body ::-webkit-scrollbar-thumb {
-  background-color: hsla(0, 0%, 100%, 0.16);
+  background-color: var(--scroll-thumb);
 }
 
 ::-webkit-scrollbar-thumb {
-  background-color: rgba(0, 0, 0, 0.2);
+  background-color: var(--scroll-thumb);
 }
 
 ::-webkit-scrollbar-track {
-  background: hsla(0, 0%, 100%, 0.1);
+  background: var(--scroll-track);
 }
 
 .btn {
@@ -96,22 +99,22 @@ body ::-webkit-scrollbar-thumb {
 
 .primary-btn {
   color: var(--white);
-  border: 2px solid linen;
+  border: 2px solid var(--accent);
   font-size: 12px;
-  background-color: rgb(52, 179, 162);
+  background-color: var(--accent-strong);
 }
 
 .primary-btn:hover {
-  color: aliceblue;
-  border: 2px solid rgb(60, 204, 185);
-  background-color: rgb(60, 204, 185);
+  color: var(--white);
+  border: 2px solid var(--accent);
+  background-color: var(--accent);
 }
 
 .highlighted-btn {
   color: var(--white);
 
   font-size: 12px;
-  background-color: rgb(214, 130, 143);
+  background-color: var(--highlight);
 }
 @media only screen and (max-width: 568px) {
   .highlighted-btn {
