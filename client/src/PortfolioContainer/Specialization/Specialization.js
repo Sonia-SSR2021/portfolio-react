@@ -1,6 +1,7 @@
 //TODO: añadir las imagenes para las cards
 
 import React, { useEffect } from "react";
+import { useTranslation } from "react-i18next";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
@@ -20,6 +21,7 @@ import aiIcon from "../../assets/Specialization/ia.png";
 import footerShape from "../../assets/Specialization/shape-bg.png";
 
 export default function Specialization(props) {
+  const { t } = useTranslation();
   const [isMobile, setIsMobile] = React.useState(window.innerWidth <= 768);
   useEffect(() => {
     const handleResize = () => {
@@ -42,96 +44,58 @@ export default function Specialization(props) {
 
   const specializationData = [
     {
-      title: "Desarrollo Backend en Java",
-      points: [
-        "Experiencia en Java 8–21 y Spring.",
-        "Implementación de APIs RESTful y microservicios.",
-        "Definición de contratos API First con OpenAPI (YAML)",
-      ],
-      level: "Avanzado",
+      title: t('specialization.items.0.title'),
+      points: t('specialization.items.0.points', { returnObjects: true }),
+      level: t('specialization.items.0.level'),
       percentage: 80,
       icon: javaIcon,
     },
     {
-      title: "Sistemas de Bases de Datos",
-      points: [
-        "Experiencia en PostgreSQL, Oracle y SQL Server.",
-        "Diseño y optimización de consultas complejas.",
-        "Uso de Redis para cacheo y optimización.",
-      ],
-      level: "Intermedio",
+      title: t('specialization.items.1.title'),
+      points: t('specialization.items.1.points', { returnObjects: true }),
+      level: t('specialization.items.1.level'),
       percentage: 60,
       icon: databaseIcon,
     },
     {
-      title: "APIs REST & Diseño de Sistemas",
-      points: [
-        "Diseño de APIs REST escalables y mantenibles.",
-        "Modelado de recursos y endpoints eficientes.",
-        "Versionado y buenas prácticas.",
-        "Integración entre servicios.",
-      ],
-      level: "Intermedio‑Avanzado",
+      title: t('specialization.items.2.title'),
+      points: t('specialization.items.2.points', { returnObjects: true }),
+      level: t('specialization.items.2.level'),
       percentage: 75,
       icon: apiIcon,
     },
     {
-      title: "Arquitectura de Microservicios",
-      points: [
-        "Diseño de sistemas distribuidos.",
-        "Separación por dominios (DDD básico).",
-        "Comunicación entre servicios REST.",
-        "Principios de escalabilidad y resiliencia.",
-      ],
-      level: "Intermedio",
+      title: t('specialization.items.3.title'),
+      points: t('specialization.items.3.points', { returnObjects: true }),
+      level: t('specialization.items.3.level'),
       percentage: 70,
       icon: microservicesIcon,
     },
     {
-      title: "Testing & Calidad de Software",
-      points: [
-        "Unit testing (JUnit, Mockito).",
-        "Testing de pruebas end-to-end.",
-        "Uso de herramientas de calidad de software (SonarQube).",
-        "Realización de pruebas Postman para validar APIs.",
-      ],
-      level: "Intermedio‑Avanzado",
+      title: t('specialization.items.4.title'),
+      points: t('specialization.items.4.points', { returnObjects: true }),
+      level: t('specialization.items.4.level'),
       percentage: 75,
       icon: testingIcon,
     },
     {
-      title: "CI/CD & Entornos de Desarrollo",
-      points: [
-        "Uso de pipelines CI/CD (Jenkins / GitLab CI).",
-        "Despliegues en Docker y Kubernetes.",
-        "Gestión de artefactos con Nexus.",
-        "Integración de SonarQube en pipelines.",
-      ],
-      level: "Básico‑Intermedio",
+      title: t('specialization.items.5.title'),
+      points: t('specialization.items.5.points', { returnObjects: true }),
+      level: t('specialization.items.5.level'),
       percentage: 50,
       icon: cicdIcon,
     },
     {
-      title: "Metodologías Ágiles & Herramientas",
-      points: [
-        "Trabajo en entornos Agile/Scrum.",
-        "Gestión de versiones con Git, GitLab y Github.",
-        "Flujos de trabajo colaborativos.",
-        "Revisiones de código y mejora continua.",
-      ],
-      level: "Avanzado",
+      title: t('specialization.items.6.title'),
+      points: t('specialization.items.6.points', { returnObjects: true }),
+      level: t('specialization.items.6.level'),
       percentage: 85,
       icon: agileIcon,
     },
     {
-      title: "Exploración de IA & LLMs",
-      points: [
-        "Consumo de APIs de LLMs (Claude / OpenAI).",
-        "Integración de IA en aplicaciones backend.",
-        "Experimentación con prompting.",
-        "Aprendizaje continuo en tecnologías emergentes.",
-      ],
-      level: "Básico",
+      title: t('specialization.items.7.title'),
+      points: t('specialization.items.7.points', { returnObjects: true }),
+      level: t('specialization.items.7.level'),
       percentage: 30,
       icon: aiIcon,
     },
@@ -151,8 +115,8 @@ export default function Specialization(props) {
   return (
     <div className="specialization">
       <ScreenHeading
-        title={"Áreas de Especialización"}
-        subHeading={"Mis principales fortalezas y áreas de especialización"}
+        title={t('specialization.title')}
+        subHeading={t('specialization.subtitle')}
       />
 
       <section className="specialization-section fade-in" id={props.id || ""}>

@@ -1,9 +1,11 @@
-import React,{useState} from "react";
+import React, { useState, useEffect, useRef } from "react";
+import { useTranslation } from "react-i18next";
 import { TOTAL_SCREENS, GET_SCREEN_INDEX } from "../../../utilities/commonUtils";
 import ScrollService from "../../../utilities/ScrollService";
-import {faBars} from "@fortawesome/free-solid-svg-icons";
-import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
+import { faBars, faTimes } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import "./Header.css?v=2";
+import LanguageSwitcher from './LanguageSwitcher';
 
 /**
  * Componente Header: Renderiza la barra de navegación superior del portfolio.
@@ -12,6 +14,8 @@ import "./Header.css?v=2";
  * @returns {JSX.Element} El componente Header renderizado.
  */
 export default function Header() {
+    const { t } = useTranslation();
+
     /**
      * Estado para el índice de la pantalla seleccionada actualmente.
      * @type {[number, function]} selectedScreen - Índice de la pantalla activa, y función para actualizarlo.
@@ -23,6 +27,21 @@ export default function Header() {
      * @type {[boolean, function]} showHeaderOptions - Booleano para mostrar/ocultar opciones, y función para alternarlo.
      */
     const [showHeaderOptions, setShowHeaderOptions] = useState(false);
+
+    useEffect(() => {
+        const handleClickOutside = (event) => {
+            if (!event.target.closest(".header-parent")) {
+                setShowHeaderOptions(false);
+            }
+        };
+
+        document.addEventListener("click", handleClickOutside);
+
+        return () => {
+            document.removeEventListener("click", handleClickOutside);
+        };
+    }, []);
+
 
     /**
      * Actualiza el estado de la pantalla seleccionada basado en el evento de ScrollService.
@@ -49,13 +68,14 @@ export default function Header() {
      * @returns {JSX.Element[]} Array de elementos JSX para las opciones del header.
      */
     const getHeaderOptions = () => {
+        const navMap = { Inicio: "home", SobreMi: "about", Trayectoria: "resume", Especializacion: "specialization", Contacto: "contact" };
         return(
             TOTAL_SCREENS.map((screen, i) => (
                 <div
                     key={screen.screen_name}
                     className={getHeaderOptionsClass(i)}
                     onClick={() => switchScreen(i, screen)}>
-                    <span>{screen.screen_name}</span>
+                    <span>{t(`nav.${navMap[screen.screen_name]}`)}</span>
                 </div>
             ))
         )
@@ -92,20 +112,30 @@ export default function Header() {
         setShowHeaderOptions(false);
     }
 
+    const menuRef = useRef(null);
+
 
     return (
         <div>
-            <div className="header-container" onClick={() => setShowHeaderOptions(!showHeaderOptions)}>
-                <div className="header-parent">
-                    <div className="header-hamburger" onClick={() => setShowHeaderOptions(!showHeaderOptions)}>
-                        <FontAwesomeIcon className="header-hamburger-bars" icon={faBars} />
+            <div className="header-container">
+                <div className="header-parent" ref={menuRef}>
+                    <div className="header-hamburger" onClick={(e) => {
+                        e.stopPropagation();
+                        setShowHeaderOptions(!showHeaderOptions);
+                    }}>
+                        <FontAwesomeIcon className="header-hamburger-bars" icon={showHeaderOptions ? faTimes : faBars} />
                     </div>
-                    <div className = "header-logo">
+                    <div className="header-logo">
                         <span>Sonia~</span>
                     </div>
-                    <div className={(showHeaderOptions) ? "header-options show-hamburger-options" : "header-options"}>
+                    <div className={(showHeaderOptions) ? "header-options show-hamburger-options" : "header-options"} onClick={(e) => e.stopPropagation()}>
                         {getHeaderOptions()}
                     </div>
+
+                    <div onClick={(e) => e.stopPropagation()}>
+                        <LanguageSwitcher />
+                    </div>
+
                 </div>
             </div>
         </div>

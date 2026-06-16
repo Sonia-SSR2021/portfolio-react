@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { useTranslation } from "react-i18next";
 import { TypeAnimation } from "react-type-animation";
 import axios from "axios";
 import { toast } from "react-toastify";
@@ -10,6 +11,8 @@ import Animations from "../../utilities/Animations";
 import "./ContactMe.css";
 
 export default function ContactMe(props) {
+  const { t } = useTranslation();
+
   let fadeInScreenHandler = (screen) => {
     if (screen.fadeInScreen !== props.id) return;
     Animations.animations.fadeInScreen(props.id);
@@ -42,7 +45,7 @@ export default function ContactMe(props) {
     e.preventDefault();
 
     if (!name || !email || !message) {
-      const msg = "Por favor, rellena todos los campos";
+      const msg = t('contact.form.requiredError');
       setBanner(msg);
       toast.error(msg);
       return;
@@ -65,7 +68,7 @@ export default function ContactMe(props) {
         setMessage("");
       }
     } catch (error) {
-      toast.error("Error al enviar el mensaje");
+      toast.error(t('contact.form.sendError'));
       console.log(error);
     } finally {
       setBool(false);
@@ -75,15 +78,15 @@ export default function ContactMe(props) {
   return (
     <div className="main-container fade-in" id={props.id || ""}>
       <ScreenHeading
-        subHeading="Mantengámonos en contacto"
-        title="Contacta conmigo"
+        subHeading={t('contact.subtitle')}
+        title={t('contact.title')}
       />
       <div className="central-form">
         {/* IZQUIERDA */}
         <div className="left-side">
           <h2 className="title">
             <TypeAnimation
-              sequence={["Ponte en contacto 📧", 1000]}
+              sequence={[t('contact.typeAnimation'), 1000]}
               wrapper="span"
               cursor={true}
               repeat={Infinity}
@@ -100,7 +103,7 @@ export default function ContactMe(props) {
           </div>
 
           <div className="img-back">
-            <h4>¡Envía tu correo aquí!</h4>
+            <h4>{t('contact.sendEmail')}</h4>
             <img src={imgBack} alt="contacto" />
           </div>
         </div>
@@ -110,18 +113,18 @@ export default function ContactMe(props) {
           <form onSubmit={submitForm}>
             <p>{banner}</p>
 
-            <label>Nombre</label>
+            <label>{t('contact.form.nameLabel')}</label>
             <input type="text" onChange={handleName} value={name} />
 
-            <label>Email</label>
+            <label>{t('contact.form.emailLabel')}</label>
             <input type="email" onChange={handleEmail} value={email} />
 
-            <label>Mensaje</label>
+            <label>{t('contact.form.messageLabel')}</label>
             <textarea onChange={handleMessage} value={message} />
 
             <div className="send-btn">
               <button type="submit">
-                Enviar
+                {t('contact.form.submitButton')}
                 <i className="fa fa-paper-plane" />
                 {bool ? (
                   <b className="load">

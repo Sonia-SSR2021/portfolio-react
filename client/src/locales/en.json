@@ -1,0 +1,246 @@
+{
+  "nav": {
+    "home": "Home",
+    "about": "About",
+    "resume": "Resume",
+    "specialization": "Specialization",
+    "contact": "Contact"
+  },
+  "home": {
+    "greeting": "Hi, I'm",
+    "name": "Sonia",
+    "roles": {
+      "backend": "Java Backend Developer",
+      "springboot": "Spring Boot Developer",
+      "apis": "REST APIs Development",
+      "microservices": "Microservices Development",
+      "blockchain": "Digital Identity Blockchain"
+    },
+    "tagline": "Specialized in backend development with Java, Spring Boot and REST APIs.",
+    "contactButton": "Contact",
+    "downloadCV": "Download CV"
+  },
+  "about": {
+    "title": "About Me",
+    "subtitle": "Why choose me?",
+    "description": "Backend developer specialized in Java, with experience in building APIs and designing and developing scalable and efficient applications using technologies like Spring Boot and relational databases. Familiar with development best practices, with motivation to continue learning and add value in professional environments.",
+    "highlights": "Key Highlights:",
+    "bullets": [
+      "REST APIs development with Java and Spring Boot",
+      "Relational database management (PostgreSQL)",
+      "Backend application design for scalability",
+      "Application of best practices (Clean Code)",
+      "Microservices Development",
+      "Testing and application maintenance"
+    ],
+    "contactButton": "Contact",
+    "downloadCV": "Download CV"
+  },
+  "resume": {
+    "title": "Resume",
+    "subtitle": "Details about my career",
+    "sections": {
+      "education": "Education",
+      "experience": "Experience",
+      "skills": "Skills",
+      "projects": "Projects",
+      "interests": "Interests"
+    },
+    "education": {
+      "school1": "IES Mare Nostrum",
+      "school1_degree": "Web application development",
+      "school1_from_dates": "2020",
+      "school1_to_dates": "2022",
+      "university1": "University of Alicante",
+      "university1_degree": "Expert in social networks, strategy and digital communication",
+      "university1_from_dates": "2019",
+      "university1_to_dates": "2020",
+      "university2": "University of Alicante",
+      "university2_degree": "Degree in advertising and public relations",
+      "university2_from_dates": "2015",
+      "university2_to_dates": "2019"
+    },
+    "skills": {
+      "java": "Java",
+      "springboot": "Spring Boot",
+      "postgresql": "PostgreSQL",
+      "git": "Git",
+      "restapis": "REST APIs",
+      "testing": "Testing (JUnit, Mockito)",
+      "maven": "Maven",
+      "springdatajpa": "Spring Data JPA",
+      "microservices": "Microservices"
+    },
+    "experience": {
+      "company1": "Inetum",
+      "company1_position": "Senior Software Developer",
+      "company1_from_dates": "2022",
+      "company1_to_dates": "Present",
+      "company1_desc": "Backend software developer using technologies such as Java, Spring Boot and PostgreSQL.",
+      "company1_details": [
+        "- Backend development with Java in enterprise environments, participating in the evolution of complex platforms and maintenance of production systems.",
+        "- Design and implementation of RESTful APIs following API First approach (OpenAPI) and layered architecture, ensuring decoupling and maintainability.",
+        "- Persistence management with Spring Data JPA + PostgreSQL, query optimization and Redis usage for performance improvement.",
+        "- Testing development (JUnit, Mockito), code review and work in Agile environments (Scrum) with GitLab, contributing to best practices and software quality."
+      ],
+      "company2": "Accenture",
+      "company2_position": "Business & Integration Arch Associate",
+      "company2_from_dates": "2022",
+      "company2_to_dates": "2022",
+      "company2_desc": "Participation in international project focused on process automation with Appian in an Agile (Scrum) environment.",
+      "company2_details": [
+        "- Design and implementation of business logic and process automation using Appian.",
+        "- Active participation in international team under Agile (Scrum) methodology.",
+        "- Preparation and maintenance of technical and functional documentation for processes, ensuring clarity and traceability of implemented solutions."
+      ],
+      "company3": "Walcon Virtual",
+      "company3_position": "Graphic Designer",
+      "company3_from_dates": "2020",
+      "company3_to_dates": "2020",
+      "company4": "JLC Creativos",
+      "company4_position": "Graphic Designer",
+      "company4_from_dates": "2019",
+      "company4_to_dates": "2019",
+      "company5": "A-puntadas",
+      "company5_position": "Graphic Designer",
+      "company5_from_dates": "2018",
+      "company5_to_dates": "2018"
+    },
+    "projects": {
+      "project1": "Personal Portfolio Website",
+      "project1_from_dates": "2026",
+      "project1_to_dates": "2026",
+      "project1_desc": "A personal portfolio website to showcase my projects and skills, created with React and hosted on GitHub Pages.",
+      "project1_tech": "Technologies Used: React JS, Bootstrap, GitHub Pages",
+      "project2": "Public Sector Management System",
+      "project2_from_dates": "2026",
+      "project2_to_dates": "Present",
+      "project2_desc": "Implementation of extensions and customizations of the product core, ensuring compatibility with the standard base and minimizing the impact on future updates.",
+      "project2_tech": "Technologies Used: Java, Spring, Oracle, agile methodologies, Git, Gitlab",
+      "project3": "Digital Identity Platform",
+      "project3_from_dates": "2023",
+      "project3_to_dates": "2026",
+      "project3_desc": "Participation in the development of a digital identity platform aimed at secure credential management and authentication services. The project required a high technical level, with focus on API contract definition, building scalable backend services and optimizing performance in critical flows.",
+      "project3_tech": "Technologies Used: Java 21, Spring Boot, Spring Data JPA, Hibernate, PostgreSQL, Redis, OpenAPI, REST APIs, JUnit 5, Mockito, Git, GitLab, Postman, Scrum.",
+      "project4": "International Banking Sector",
+      "project4_from_dates": "2022",
+      "project4_to_dates": "2022",
+      "project4_desc": "Participation in a process automation project for an international banking entity, focused on BPM flow design and development, business logic implementation and continuous improvement of critical processes using the Appian platform.",
+      "project4_tech": "Technologies Used: Appian, BPM, process automation, Agile (Scrum), functional and technical documentation."
+    },
+    "interests": {
+      "interest1": "Hiking and Nature",
+      "interest1_desc": "I enjoy hiking and outdoor activities, which allows me to maintain a balance between professional and personal life, promoting consistency and well-being.",
+      "interest2": "Reading",
+      "interest2_desc": "Interested in reading novels of different genres, especially fantasy, romance and comedy, developing creativity and concentration ability.",
+      "interest3": "Cooperative Video Games",
+      "interest3_desc": "Enthusiast of team video games, where skills such as communication, strategy and problem solving are enhanced."
+    }
+  },
+  "specialization": {
+    "title": "Areas of Specialization",
+    "subtitle": "My main strengths and areas of specialization",
+    "items": [
+      {
+        "title": "Backend Development in Java",
+        "level": "Advanced",
+        "points": [
+          "Experience with Java 8–21 and Spring.",
+          "Implementation of RESTful APIs and microservices.",
+          "API First contract definition with OpenAPI (YAML)"
+        ]
+      },
+      {
+        "title": "Database Systems",
+        "level": "Intermediate",
+        "points": [
+          "Experience with PostgreSQL, Oracle and SQL Server.",
+          "Complex query design and optimization.",
+          "Redis usage for caching and optimization."
+        ]
+      },
+      {
+        "title": "REST APIs & System Design",
+        "level": "Intermediate-Advanced",
+        "points": [
+          "Design of scalable and maintainable REST APIs.",
+          "Efficient resource and endpoint modeling.",
+          "Versioning and best practices.",
+          "Inter-service integration."
+        ]
+      },
+      {
+        "title": "Microservices Architecture",
+        "level": "Intermediate",
+        "points": [
+          "Design of distributed systems.",
+          "Domain separation (basic DDD).",
+          "REST communication between services.",
+          "Scalability and resilience principles."
+        ]
+      },
+      {
+        "title": "Testing & Software Quality",
+        "level": "Intermediate-Advanced",
+        "points": [
+          "Unit testing (JUnit, Mockito).",
+          "End-to-end testing.",
+          "Software quality tools (SonarQube).",
+          "Postman API testing."
+        ]
+      },
+      {
+        "title": "CI/CD & Development Environments",
+        "level": "Basic-Intermediate",
+        "points": [
+          "CI/CD pipelines (Jenkins / GitLab CI).",
+          "Deployments on Docker and Kubernetes.",
+          "Artifact management with Nexus.",
+          "SonarQube integration in pipelines."
+        ]
+      },
+      {
+        "title": "Agile Methodologies & Tools",
+        "level": "Advanced",
+        "points": [
+          "Work in Agile/Scrum environments.",
+          "Version management with Git, GitLab and Github.",
+          "Collaborative workflows.",
+          "Code review and continuous improvement."
+        ]
+      },
+      {
+        "title": "AI & LLMs Exploration",
+        "level": "Basic",
+        "points": [
+          "LLM APIs consumption (Claude / OpenAI).",
+          "AI integration in backend applications.",
+          "Prompting experimentation.",
+          "Continuous learning in emerging technologies."
+        ]
+      }
+    ]
+  },
+  "contact": {
+    "title": "Contact Me",
+    "subtitle": "Let's stay in touch",
+    "typeAnimation": "Get in touch 📧",
+    "sendEmail": "Send your email here!",
+    "form": {
+      "nameLabel": "Name",
+      "emailLabel": "Email",
+      "messageLabel": "Message",
+      "submitButton": "Send",
+      "requiredError": "Please fill in all fields",
+      "sendError": "Error sending message"
+    }
+  },
+  "footer": {
+    "copyright": "© {{year}} Sonia",
+    "email": "📧 sonia.soriano.rodriguez.sr@gmail.com"
+  },
+  "common": {
+    "contactButton": "Contact",
+    "downloadCV": "Download CV"
+  }
+}
