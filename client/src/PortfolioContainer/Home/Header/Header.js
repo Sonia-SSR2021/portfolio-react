@@ -4,8 +4,25 @@ import { TOTAL_SCREENS, GET_SCREEN_INDEX } from "../../../utilities/commonUtils"
 import ScrollService from "../../../utilities/ScrollService";
 import { faBars, faTimes } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { useTheme } from "../../../context/ThemeContext";
 import "./Header.css?v=2";
 import LanguageSwitcher from './LanguageSwitcher';
+
+function ThemeToggle() {
+  const { isDarkMode, toggleTheme } = useTheme();
+
+  return (
+    <button
+      type="button"
+      className={`theme-toggle-switch ${isDarkMode ? 'dark' : 'light'}`}
+      onClick={toggleTheme}
+      aria-label={isDarkMode ? "Activar modo claro" : "Activar modo oscuro"}
+      title={isDarkMode ? "Modo claro" : "Modo oscuro"}
+    >
+      <div className="toggle-slider"></div>
+    </button>
+  );
+}
 
 /**
  * Componente Header: Renderiza la barra de navegación superior del portfolio.
@@ -60,7 +77,10 @@ export default function Header() {
      * Suscripción al broadcaster de ScrollService para actualizar la pantalla activa.
      * @type {Subscription} currentScreenSubscription - Suscripción RxJS para eventos de scroll.
      */
-    let currentScreenSubscription = ScrollService.currentScreenBroadcaster.subscribe(updateCurrentScreen);
+    useEffect(() => {
+        const currentScreenSubscription = ScrollService.currentScreenBroadcaster.subscribe(updateCurrentScreen);
+        return () => currentScreenSubscription.unsubscribe();
+    }, []);
 
     /**
      * Genera las opciones de navegación del header basadas en TOTAL_SCREENS.
@@ -131,6 +151,7 @@ export default function Header() {
                     <div className={(showHeaderOptions) ? "header-options show-hamburger-options" : "header-options"} onClick={(e) => e.stopPropagation()}>
                         {getHeaderOptions()}
                     </div>
+                    <ThemeToggle />
 
                     <div onClick={(e) => e.stopPropagation()}>
                         <LanguageSwitcher />

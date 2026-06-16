@@ -1,20 +1,56 @@
-:root{
-    --light-blue : #04C3FF;
-    --light-blue-shadow:  rgb(69 211 255 / 27%);
+:root {
+    --light-blue: #04C3FF;
+    --light-blue-shadow: rgb(69 211 255 / 27%);
     --sea-green: #0ABEAD;
     --sea-green-dark: #0CBFAE;
     --sea-green-extra-dark: #09BEAD;
-    --sea-green-shadow: rgba(11, 190, 173,0.4);
-    --header-hamburger-background : rgba(11, 190, 173,0.8);
+    --sea-green-shadow: rgba(11, 190, 173, 0.4);
+    --header-hamburger-background: rgba(11, 190, 173, 0.8);
     --orange: #F57F17;
     --dark-orange: #FF5823;
-    --orange-shadow: rgba(245, 127, 23,0.2);
-    --white: #ffffff;
-    --black: #333333;
+    --orange-shadow: rgba(245, 127, 23, 0.2);
     --disabled-btn: #09bead7a;
-    --error-message:  #e44f4fd1;
+    --error-message: #e44f4fd1;
     --toast-error: #e44f4ffa;
-    --toast-shadow:  #9c9c9ce3;
+    --toast-shadow: #9c9c9ce3;
     --toast-success: #0CBFAE;
-    --loader-color: #0CBFAE
+    --loader-color: #0CBFAE;
+    --accent: #3cccc0;
+    --accent-strong: #34b3a2;
+    --accent-contrast: #0f2f3b;
+    --highlight: #ff95a5;
+    --nav-bg: #264653;
+    --white: #ffffff;
+    --black: #1f2933;
+}
+
+[data-theme="light"] {
+    --color-bg: #ffffff;
+    --color-surface: #ffffff;
+    --color-surface-soft: #eef2f4;
+    --color-text: #1f2933;
+    --color-text-muted: #51606d;
+    --color-border: #d7e0e6;
+    --color-overlay: rgba(255, 255, 255, 0.65);
+    --form-input-bg: rgba(230, 230, 230, 0.6);
+    --scroll-track: rgba(31, 34, 53, 0.08);
+    --scroll-thumb: #264653;
+    --white: #ffffff;
+    --black: #1f2933;
+}
+
+[data-theme="dark"] {
+    --color-bg: #0f1720;
+    --color-surface: #16232e;
+    --color-surface-soft: #1f3342;
+    --color-text: #e8f1f7;
+    --color-text-muted: #b7c7d4;
+    --color-border: #365165;
+    --color-overlay: rgba(5, 10, 15, 0.5);
+    --form-input-bg: rgba(255, 255, 255, 0.08);
+    --scroll-track: rgba(255, 255, 255, 0.09);
+    --scroll-thumb: #5fa4bd;
+    --white: #f5f8fb;
+    --black: #f5f8fb;
+    --nav-bg: #112634;
 }
