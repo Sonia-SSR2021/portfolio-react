@@ -175,7 +175,7 @@
         ]
       },
       {
-        "title": "Microservices Architecture",
+        "title": "Hexagonal Architecture",
         "level": "Intermediate",
         "points": [
           "Design of distributed systems.",

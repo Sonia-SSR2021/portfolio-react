@@ -175,7 +175,7 @@
         ]
       },
       {
-        "title": "Arquitectura de Microservicios",
+        "title": "Arquitectura Hexagonal",
         "level": "Intermedio",
         "points": [
           "Diseño de sistemas distribuidos.",
