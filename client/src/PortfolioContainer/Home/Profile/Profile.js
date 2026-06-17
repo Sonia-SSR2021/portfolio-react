@@ -5,7 +5,7 @@ import ScrollService from '../../../utilities/ScrollService';
 import './Profile.css?v=2';
 
 export default function Profile() {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
 
   const roleSequence = [
     t('home.roles.backend'),
@@ -47,6 +47,7 @@ export default function Profile() {
               {" "}
               <h1>
                 <TypeAnimation
+                  key={i18n.language}
                   sequence={roleSequence}
                   wrapper="span"
                   cursor={true}
