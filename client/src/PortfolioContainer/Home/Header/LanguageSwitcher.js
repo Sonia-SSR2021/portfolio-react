@@ -16,7 +16,7 @@ export default function LanguageSwitcher() {
     setIsOpen(false);
   };
 
-  const currentLang = languages.find(lang => lang.code === i18n.language);
+  const currentLang = languages.find(lang => i18n.language?.startsWith(lang.code));
 
   return (
     <div className="language-switcher-container">

@@ -12,9 +12,11 @@ i18n
   .use(initReactI18next)
   .init({
     fallbackLng: 'es',
+    load: 'languageOnly',
     debug: false,
     detection: {
       order: ['localStorage', 'navigator'],
+      lookupLocalStorage: LANGUAGE_STORAGE_KEY,
       caches: ['localStorage'],
     },
     resources: {
@@ -25,12 +27,6 @@ i18n
       escapeValue: false,
     },
   });
-
-// Override detection to use localStorage key
-const savedLanguage = localStorage.getItem(LANGUAGE_STORAGE_KEY);
-if (savedLanguage && (savedLanguage === 'es' || savedLanguage === 'en')) {
-  i18n.changeLanguage(savedLanguage);
-}
 
 // Save language preference when it changes
 i18n.on('languageChanged', (lng) => {
