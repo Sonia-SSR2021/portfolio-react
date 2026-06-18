@@ -7,6 +7,9 @@ import "./AboutMe.css?v=2";
 
 export default function AboutMe(props) {
   const { t } = useTranslation();
+  const cvFile = t('common.cvFile');
+  const cvDownloadName = t('common.cvDownloadName');
+  const cvUrl = `${process.env.PUBLIC_URL}/${cvFile}`;
 
   let fadeInScreenHandler = (screen) => {
     if (screen.fadeInScreen !== props.id) return;
@@ -57,7 +60,7 @@ export default function AboutMe(props) {
               >
                 {t('common.contactButton')}
               </button>
-              <a href="sonia_soriano_cv.pdf" download="Sonia Soriano.pdf">
+              <a href={cvUrl} download={cvDownloadName}>
                 <button className="btn highlighted-btn">{t('common.downloadCV')}</button>
               </a>
             </div>
