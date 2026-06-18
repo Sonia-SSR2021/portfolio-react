@@ -6,6 +6,9 @@ import './Profile.css?v=2';
 
 export default function Profile() {
   const { t, i18n } = useTranslation();
+  const cvFile = t('common.cvFile');
+  const cvDownloadName = t('common.cvDownloadName');
+  const cvUrl = `${process.env.PUBLIC_URL}/${cvFile}`;
 
   const roleSequence = [
     t('home.roles.backend'),
@@ -66,7 +69,7 @@ export default function Profile() {
               {""}
               {t('home.contactButton')}{" "}
             </button>
-            <a href='sonia_soriano_cv.pdf' download='Sonia Soriano.pdf'>
+            <a href={cvUrl} download={cvDownloadName}>
               <button className='btn highlighted-btn'>{t('home.downloadCV')}</button>
             </a>
             </div>

@@ -246,6 +246,8 @@
   },
   "common": {
     "contactButton": "Contacto",
-    "downloadCV": "Descargar CV"
+    "downloadCV": "Descargar CV",
+    "cvFile": "sonia_soriano_cv.pdf",
+    "cvDownloadName": "Sonia Soriano CV (ES).pdf"
   }
 }
