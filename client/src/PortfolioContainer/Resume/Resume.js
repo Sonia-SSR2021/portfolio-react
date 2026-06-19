@@ -274,9 +274,11 @@ export default function Resume(props) {
     setCarousalOffSetStyle(newCarousalOffSet);
     setSelectBulletIndex(index);
 
-    // Resetear scroll al cambiar de sección
-    const scrollContainer = document.querySelector(".resume-screen-container");
-    if (scrollContainer) scrollContainer.scrollTop = 0;
+    // Reset all tab scrolls so each section starts from top when revisited.
+    const scrollContainers = document.querySelectorAll(".resume-screen-container");
+    scrollContainers.forEach((container) => {
+      container.scrollTop = 0;
+    });
   };
 
   const getBullets = () => {

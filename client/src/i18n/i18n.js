@@ -11,7 +11,9 @@ i18n
   .use(LanguageDetector)
   .use(initReactI18next)
   .init({
-    fallbackLng: 'es',
+    fallbackLng: 'en',
+    supportedLngs: ['en', 'es'],
+    nonExplicitSupportedLngs: true,
     load: 'languageOnly',
     debug: false,
     detection: {
@@ -30,7 +32,8 @@ i18n
 
 // Save language preference when it changes
 i18n.on('languageChanged', (lng) => {
-  localStorage.setItem(LANGUAGE_STORAGE_KEY, lng);
+  const normalizedLanguage = lng?.startsWith('es') ? 'es' : 'en';
+  localStorage.setItem(LANGUAGE_STORAGE_KEY, normalizedLanguage);
 });
 
 export default i18n;

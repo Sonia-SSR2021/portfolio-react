@@ -16,7 +16,10 @@ export default function LanguageSwitcher() {
     setIsOpen(false);
   };
 
-  const currentLang = languages.find(lang => i18n.language?.startsWith(lang.code));
+  const detectedLanguage = i18n.resolvedLanguage || i18n.language;
+  const currentLang =
+    languages.find((lang) => detectedLanguage?.startsWith(lang.code)) ||
+    languages.find((lang) => lang.code === 'en');
 
   return (
     <div className="language-switcher-container">
@@ -41,7 +44,7 @@ export default function LanguageSwitcher() {
             <button
               key={lang.code}
               type="button"
-              className={`language-option ${i18n.language === lang.code ? 'active' : ''}`}
+              className={`language-option ${detectedLanguage?.startsWith(lang.code) ? 'active' : ''}`}
               onClick={() => changeLanguage(lang.code)}
             >
               <span className="option-code">{lang.display}</span>
